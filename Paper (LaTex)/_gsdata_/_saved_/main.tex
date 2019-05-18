@@ -1,0 +1,168 @@
+  % APA 6th edition LaTeX template. Use this as a basis for writing documents that have to meet guidelines for the American Psychological Association. This has been optimized for "man" option, or manuscript format, which outputs a double-spaced, single column document that is designed for coursework or journal submissions. The inline comments assume you have some minimal working knowledge of LaTeX. Further, this is currently set up for managing references with biblatex and biber.
+
+  % To be clear, this template is not endorsed by the American Psychological Association, the maintainers of the apa6 document class for LaTeX, or anyone else of great importance. For more documentation on using apa6, refer to its page at CTAN <http://www.ctan.org/tex-archive/macros/latex/contrib/apa6>.
+  
+  % ==============================================================
+  %   Copyright (C) 2015  Jacob Long
+
+  %   This program is free software: you can redistribute it and/or modify
+  %   it under the terms of the GNU General Public License as published by
+  %   the Free Software Foundation, either version 3 of the License, or
+  %   (at your option) any later version.
+
+  %   This program is distributed in the hope that it will be useful,
+  %   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  %   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  %   GNU General Public License for more details.
+
+  %   You should have received a copy of the GNU General Public License
+  %   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  % ===============================================================
+
+
+% "draftfirst" or "draftall" as option to watermark, 10pt/11pt/12pt for font size, noextraspace if there are spacing issues, "man" for regular papers (assignments, journal submissions), jou for journal-esque formatting.
+\documentclass[man, 11pt]{apa6}
+
+  \usepackage[american]{babel}
+  \usepackage{csquotes}
+  \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+  
+  % Removes month from bibliography entries, which shouldn't be there for academic journals - optionally, remove the month entries from your .bib file on the offending files. Comment it out if using popular media, newspaper articles, etc. that need the month field. 
+  \AtEveryBibitem{
+    \clearfield{month}
+  }
+  \DeclareLanguageMapping{american}{american-apa}
+  
+  % Removes "retrieved from on date" from bibliography entry unless it is a wiki URL, which is closer to the spirit of APA's rule. See biblatex-apa documentation for more info.
+  \DeclareSourcemap{
+  \maps[datatype=bibtex]{
+  \map{
+  \step[fieldsource=url,
+  notmatch=\regexp{wiki},
+  final=1]
+  \step[fieldset=urldate, null]
+  }
+  }
+  }
+  
+  % Add your BibTeX files here. Use source location if you aren't keeping them as the same folder as your document.
+  \addbibresource{references.bib}
+  
+  % Can help catch outdated code practices by giving you console warnings. Commented out by default so as to not confuse new users.
+  %\usepackage[l2tabu]{nag}
+  
+  % title, etc.
+  \title{Wild Fire: Benefits and Potential Applications}
+  \shorttitle{Wild Fire}
+  \author{Jiajun(Aaron) Mao}
+  
+  % The following four fields make up some of the front matter of your document. If working on an assignment for a course, I typically use "affiliation" for the class name. I have commented out abstract since minimal usage doesn't require it and leaving it blank will generate a blank page. Ignore the warning about the lack of abstract. 
+  
+  \affiliation{Kent School}
+  \abstract{Wildfire refers to a fire that spread out within an area that consists of combustible 
+  vegetation. When occur, wildfires bring destruction to forests and financial losses for the nearby
+   residences. Based on the general type of combustible vegetation, wildfires can be classified 
+   into multiple sub-categories such as forest fire, grass fire, peat fire, etc. However, despite 
+   the apparent outlook as a natural disaster, which people advocate for controlling whenever possible, 
+  wildfires actually have beneficial effects on the ecosystem. In this passage, the benefits of the 
+  wildfires will be discussed as well as its potential applications as a mean of forest management.}
+
+  \keywords{Wildfire, Prescribed Burning, Controlled Burning}
+  %\authornote{}
+  
+  \begin{document}
+  \maketitle
+
+  \section{Cause}
+  The presence of fossil charcoal represents that this area has once experienced a forest fire (\cite{charcoal}). 
+  From studying and analyzing environmental factors of the regions that have experience wildfire in 
+  recent years and those experienced wildfires before, researchers have reached a conclusion that 
+  the primary causes for wildfires are: dry climate, lightning, and volcanic eruption. There are 
+  wildfires that are the result of human activities such as discarded glasses, cigarettes, etc (\cite{Cambridge}).
+
+  \section{Benefits}
+  Although people might form an impression from watching and listening to the news broadcast that wildfires are 
+  dangerous and destructive. It is true that wildfires can be dangerous for the people who lived nearby and 
+  seems to cause great environmental distress by eliminating forests, there are actual benefits brought forth 
+  by wildfires, some of them even necessary for the healthy and continuous development of an ecological system (\cite{ecological_benefits}).
+  \begin{enumerate}  
+    \item \textit{Biodiversity}. As mentioned by Robert E. Keane and Eva Karau, wildfires can be beneficial since 
+      "they can reduce hazardous fuels and restore fire-dominated ecosystems" (\cite{ecological_benefits}). 
+      For example, wildfires clear out the dominant species of that region and allow ecological succession to take place. 
+      New species that were unable to compete with the previously dominant species for nutrient will grow and 
+      develop the burned region. Moreover, the elimination of trees with high canopies in a forest by wildfires 
+      allow sunlight to reach the ground, also providing idea condition for new species' seeds to germinate (\cite{ecological_assessments}). 
+    \item \textit{Plant Adaptation.} There are actually plants that have already adapted to frequent fires 
+      such as the Proteaceae. They have developed serotiny, an ecological adaptation exhibited as plant's seeds' 
+      germination is triggered by certain natural events (\cite{serotiny}), and in this case, wildfire. For those plants, fires 
+      are actually necessary for the continuation of the species. 
+  \end{enumerate}
+  Apparently, wildfires play important roles in the healthy continuation of a forest ecological system by 
+  maintaining biodiversity through eliminating certain species and allowing new species to develop and grow.
+  
+
+  \section{Potential Applications}
+  Since wildfire can bring certain benefits, we have since come up with certain ways to utilize the power 
+  of wildfires for the purpose of and not limited to, fire control and prevention, maintaining biodiversity, 
+  creating wildlife habitat, preparing the agricultural land and greenhouse gas abatement. In general, the practice
+   of artificially introducing wildfires into the desired region is called prescribed burning or controlling burning.
+
+   \subsection{Fire Prevention}
+   One way that artificially introduced wildfire is being used is that ecologists introduce fires into desired 
+   region during winter, seeking to prevent larger wildfires during next year's summer. As Teresa Valor Et. al. 
+   have stated, prescribed burning can "reduce the surface fuel loads...[and] help preserve pine stands by 
+   increasing forest fire-resistance" (\cite{fire_prevention}). If combustible vegetation on the ground is removed 
+   by controlled burning, the chance of having a larger-scale wildfire next year will be dramatically decreased.
+
+   \subsection{Fire Control}
+   The type of controlled burning used in fire control is called Back Burning, which involves the creation 
+   of a small firebreak. The firebreak formed by burning vegetation in that region in a controlled manner can 
+   effectively prevent the spread of an ongoing, large-scale forest fire (\cite{backburning}).
+
+   \subsection{Maintaining Biodiversity}
+   As mentioned in the benefits section, one of the benefits brought forth by wildfire is that the biodiversity 
+   in the ecological system is maintained. Therefore, controlled burning can also be used to generate 
+   biodiversity artificially. Ecologists from time to time use controlling burning to trigger the germination 
+   of certain seeds or burn down certain vegetation to allow the growth of others (\cite{biodiversity}).
+
+   \subsection{Creating Wildlife Habitats}
+   A controlled fire also can serve to create a habitat for wildlife. By burning down over-story vegetation, lower-story 
+   such as bushes are able to receive adequate sunlight and grow. As the result of an increased amount of lower-story 
+   vegetation, habitats are created or improved for those species that consider lower-story vegetation as their 
+   food source, such as deer, dove, quail, etc (\cite{biodiversity}). For example, controlled burning is used to maintain the habitat 
+   of the endangered species of red-cockaded woodpeckers, which are sandhill and flatwoods (\cite{wildlife_habitat}).
+
+   \subsection{Preparing Agricultural Land}
+   This is rather a controversial usage of controlled burning. Essentially what this practice does is that lands are 
+   burned clean in order to be transformed into an agricultural-friendly land. Controlled burning kills off weeds and 
+   grasses as well as clear the land for any existing vegetation (\cite{agricultural_burning}).
+
+  \section{Conclusion}
+  So we can clearly see that though there are definitely negative environmental and financial impacts brought by wildfire,
+  there are still benefits that wildfires are bringing to our ecosystem. Furthermore, special aspects and power of wildfires
+  can be utilized by people for the better good of the society, helping our environment or raising our standard of lives.
+
+  % This is where the bibliography goes. Finish the body of your paper before this point, other than the appendix. 
+  \printbibliography
+  
+  % I have commented out the appendix section since it isn't a standard for minimal documents. 
+  %\appendix 
+  
+  \end{document}
+  
+    % ==============================================================
+    %   Copyright (C) 2015  Jacob Long
+  
+    %   This program is free software: you can redistribute it and/or modify
+    %   it under the terms of the GNU General Public License as published by
+    %   the Free Software Foundation, either version 3 of the License, or
+    %   (at your option) any later version.
+  
+    %   This program is distributed in the hope that it will be useful,
+    %   but WITHOUT ANY WARRANTY; without even the implied warranty of
+    %   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    %   GNU General Public License for more details.
+  
+    %   You should have received a copy of the GNU General Public License
+    %   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    % ===============================================================
