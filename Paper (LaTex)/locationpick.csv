@@ -1,20 +1,6 @@
-\documentclass[review]{elsarticle}
-
-\usepackage{lineno,hyperref}
-\usepackage{pgfplots}
-\modulolinenumbers[5]
-
-\journal{Journal of \LaTeX\ Templates}
-
-
-%% This is where all the data go (temp)
-\pgfplotstableread[row sep=\\,col sep=&]{
-    location & number \\
-    Club Field & 5 \\
-    Headmaster's Field & 2 \\
-    South Field & 5 \\
-    Boardwalk & 5 \\
-}\locationpick 
+    Club Field,Headmaster Field,South Field,Boardwalk/main
+    5,2,5,5
+\end{filecontents}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -84,18 +70,18 @@ Kent School receives its electricity from the CT state grid [CONFIRM] (the solar
 \subsection{environmental incentives}
 Though natural gas is a comparably cleaner energy source than traditional carbon-based sources such as coal or petroleum, the burning of natural gas nevertheless still releases carbon dioxide (\cite{cost_and_performance_baseline_for_fossil_energy_plants}), one of the most notorious greenhouse gases that are causing the global warming (\cite{Shakun2012_co2_global_warming}). Therefore, for environmental concerns, the burning of carbon-based energy source should be avoided as much as possible. Wind power, despite the carbon emission generated during the manufacturing processes of the turbines (\cite{Kaldellis_carbon_foortprint_of_offshore_wind_energy}), release mininum, if not none, additional green house gases once they become functional (\cite{IEEE_wind_carbon_reduction}).
 \\\indent Several reviews have been done regarding the potential or achievement of wind power in reducing the overall carbon emission and other environmentally harmful gas for electricity generation, as well as our reliance on fossil fuels. These studies, including \cite{rajat_cost_saving_and_emission_reduction}'s Cost savings and emission reduction capability of wind-integrated power systems and \cite{IEEE_wind_carbon_reduction}'s Wind Generation, Power System Operation, and Emission Reduction demonstrate the possibility and potential of reduction in Kent School’s carbon footprint if wind-power generating facilities are installed on campus, which will in turn further Kent’s path on making the school’s operations more environmentally sustainable.
- 
+
 
 \subsection{economic incentives}
 It is evident that to provide students with quality education, Kent School needs to possess certain degree of financial affluency. However, according to various sources, including the Headmaster of the school, Fr. Shell, and the annual report of Kent School [NEED], there is a substantial gap existing between the tuition and cost for a student. Therefore, to make Kent education truly available to everyone, the operational cost gap for each student must be reduced. Using wind energy to subsidize the electricity consumption on campus might make the cost reduction possible.
-\\\indent Again, several studies, including Maria Isabel Blanco’s The economics of wind energy (\cite{maria_wind_energy_economics}), and The Economics of Wind Energy: A report by the European Wind Energy Association (\cite{european_wind_energy_association_report}), prove that the average cost of operating wind farm could be substantially lower compared to the cost of buying electricity from the regional power. Therefore, through the utilization of wind power on campus, Kent School can possibility reduce the operation cost for a single student become more financially self-sufficient, in turn providing future Kent students a better education.   
+\\\indent Again, several studies, including Maria Isabel Blanco’s The economics of wind energy (\cite{maria_wind_energy_economics}), and The Economics of Wind Energy: A report by the European Wind Energy Association (\cite{european_wind_energy_association_report}), prove that the average cost of operating wind farm could be substantially lower compared to the cost of buying electricity from the regional power. Therefore, through the utilization of wind power on campus, Kent School can possibility reduce the operation cost for a single student become more financially self-sufficient, in turn providing future Kent students a better education.
 
 
 \section{Methods}
 
 \subsection{Location Determination Factors}
 When determining the location of the possible wind farm, the location must satisfy the requirements including but not limited to the listed below. When considering a location, requirement 1 and 2 are strict requirement, meaning that if these two requirements are not fulfilled, a location should not be considered even if they satisfy requirement 3 and 4.
-Requirement 3 and 4 in turn, are loose requirements that do not necessarily have to be fulfilled if economic and environmental benefit of constructing a wind farm outweight the negative influence. However, if there is a statistically significant portion of student body voicing against the constructin of the wind farm for the reason mentioned in requirement 3 and 4, 
+Requirement 3 and 4 in turn, are loose requirements that do not necessarily have to be fulfilled if economic and environmental benefit of constructing a wind farm outweight the negative influence. However, if there is a statistically significant portion of student body voicing against the constructin of the wind farm for the reason mentioned in requirement 3 and 4,
 these two requirements will be weighted more heavily into consideration of the location of the wind farm.
 
 \begin{enumerate}
@@ -106,17 +92,17 @@ these two requirements will be weighted more heavily into consideration of the l
 \end{enumerate}
 
 \subsection{Location Determination Process}
-In order to obtain a general location on campus where the wind is constant and powerful, a study is done with students population on campus. By assigning each of CL and Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students to respond to the question of 
+In order to obtain a general location on campus where the wind is constant and powerful, a study is done with students population on campus. By assigning each of CL and Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students to respond to the question of
 \textit{"Where on campus do you think the wind is strongest? And another location where the wind is the second strong?"}. From the all the responses we receive, we will determine two location with the highest vote and consider them for the second requirement of location feasibility.
  Taking the second requirement into consideration - location feasibility, we will analyze both sites' proximity to another physical object and conclude whether the two sites from the requirement above satisfy the criteria of having a clear ground level and aerial zone for the construction of a possible wind farm. If any location does not satisfy the criteria for this requirement, it will be eliminated from consideration.
  Then, from the remaining locations we will analyze their potential influence on school's normal operation, including but not limited to academic activities, atheletic activities, and recreational activities. The negative effects of wind farm will be analyzed and considered such as the noise generated and the space required on the ground level.
  At last, the remaining sites might cause influence on the aesthetic beauty of the Housatonic valley. A study identical to the one described in requirement one is conducted again with the question \textit{"Do you think the construction of a wind farm at site A and/or B will have negative impact on the aesthetic beauty of the surrouding area and the Kent campus?"}
-From the answers received we will analyze the majority side and take that into consideration. 
+From the answers received we will analyze the majority side and take that into consideration.
 
 \subsection{Feasibility Determination Process}
 After the location is determined by the process described in section 2.2, they will be analyzed for the feasbility of actually constructing a wind farm. Relevant data such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 856A will be used. The device will be setup in the chosen location and the fan that will be measuring the wind speed
  will be setup on top of a tripod 2m above ground level. After a continuous 24 hours of data collection, the data from the wind anemometer is then transferred to the computer and a graph of wind speed/flow volume against time will be plotted.
- \\\indent From the plotted graph as well as the wind speed/flow volume's relationship with the amount of electricity generateed we can estimate the economic benefit from the construction of such a wind farm and its possible environmental benefits and consequences. 
+ \\\indent From the plotted graph as well as the wind speed/flow volume's relationship with the amount of electricity generateed we can estimate the economic benefit from the construction of such a wind farm and its possible environmental benefits and consequences.
  At last we can compare the wind speed and flow volume, as well as the economic/environmental benefit of different locations across campus with each other and other locations in the United States where commercial wind farms are in operation to determine the final feasibility of constructing a wind farm on Kent School's property at a chosen location.
 
 \section{Results}
@@ -126,33 +112,33 @@ After sending out requests to 60 students on campus with the question \textit{Wh
     \item {Club Field}
     \item {Headmaster's Field}
     \item {South Field}
-    \item {Boardwalk/Main}   
+    \item {Boardwalk/Main}
 \end{enumerate}
 we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%.
+\begin{tikzpicture}
+    \begin{axis}[
+        ybar,
+        enlargelimits=0.15,
+        legend style={at={(0.5,-0.15)},
+        anchor=north,legend columns=-1},
+        ylabel={\#participants},
+        symbolic x coords={tool8,tool9,tool10},
+        xtick=data,
+        nodes near coords,
+        nodes near coords align={vertical},
+    ]
+    \addplot coordinates {(tool8,5) (tool9, 2) (tool10, 5)};
+    \legends{used, understood, not understood}
+    \end{axis}
+\end{tikzpicture}
+
+
 
 %TODO: Change the question in the methods section to make sure the paper is not self-conflicting
 
 
-\begin{tikzpicture}
-    \begin{axis}[
-            ybar,
-            bar width=1.2cm,
-            width = \textwidth,
-            height = 0.5*\textwidth,
-            symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
-            xtick=data,
-            nodes near coords,
-        ]
-        \addplot table[x=location,y=number]{\locationpick};
-    \end{axis}
-\end{tikzpicture}
-        
-
-
-
-
 \clearpage
-\bibliography{mybibfile.bib}    
+\bibliography{mybibfile.bib}
 
 \end{document}
 
