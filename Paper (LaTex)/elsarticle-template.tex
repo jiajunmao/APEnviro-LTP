@@ -128,8 +128,7 @@ After sending out requests to 60 students on campus with the question \textit{Wh
     \item {South Field}
     \item {Boardwalk/Main}   
 \end{enumerate}
-we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%.
-
+we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey was demonstrated in the bar graph below with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
 %TODO: Change the question in the methods section to make sure the paper is not self-conflicting
 
 
@@ -142,6 +141,10 @@ we received 17 response from those 60 questionnaires sent, a response rate of 28
             symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
             xtick=data,
             nodes near coords,
+            ylabel={Numbers of Responses},
+            ymax=7,
+            title style={anchor=north,yshift=20},
+            title = Figure 1: Location of Strongest Wind at Kent School,
         ]
         \addplot table[x=location,y=number]{\locationpick};
     \end{axis}
