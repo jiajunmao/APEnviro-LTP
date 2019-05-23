@@ -24,10 +24,15 @@
     Boardwalk & 4 & 8\\
 }\locationbeauty
 
-\pgfplotstableread[col sep=comma]{../Data/1day/windata10m.csv}\windoneday
-\pgfplotstableread[col sep=comma]{../Data/1week/windata30m.csv}\windoneweek
-\pgfplotstableread[col sep=comma]{../Data/1month/windata2h.csv}\windonemonthtwohour
+\pgfplotstableread[col sep=comma]{../Data/1day/windata10m.csv}\windonedaytenminutes
+\pgfplotstableread[col sep=comma]{../Data/1day/windata1hr.csv}\windonedayonehour
 
+\pgfplotstableread[col sep=comma]{../Data/1week/windata30m.csv}\windoneweekthirtyminutes
+\pgfplotstableread[col sep=comma]{../Data/1week/windata4hr.csv}\windoneweekfourhour
+
+\pgfplotstableread[col sep=comma]{../Data/1month/windata2h.csv}\windonemonthtwohour
+\pgfplotstableread[col sep=comma]{../Data/1month/windata12h.csv}\windonemonthtwelvehour
+\pgfplotstableread[col sep=comma]{../Data/1month/windata1d.csv}\windonemonthoneday
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -194,7 +199,7 @@ we received 17 response from those 60 questionnaires sent, a response rate of 28
             ybar,
             bar width=1.2cm,
             width = \textwidth,
-            height = 0.5*\textwidth,
+            height = 0.47*\textwidth,
             symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
             xtick=data,
             nodes near coords,
@@ -248,7 +253,7 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
             area legend,
             bar width=1.2cm,
             width = \textwidth,
-            height = 0.5*\textwidth,
+            height = 0.47*\textwidth,
             symbolic x coords={Club Field,South Field,Boardwalk},
             xtick=data,
             nodes near coords,
@@ -265,66 +270,144 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
     \end{axis}
     \label{graph:locationbeauty}
 \end{tikzpicture}
-        
+
 we received 12 responses 
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% One Day%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
     \begin{axis}[
         xlabel=time,
         x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Value, 
+        ylabel=Wind Speed(m/s), 
         date coordinates in=x, 
         table/col sep=comma, 
         date ZERO=2019-05-22, 
         xticklabel=\month.\day. \hour:\minute, 
         width=\textwidth,
-        height=0.78\textwidth,
+        height=0.54\textwidth,
         xticklabel style={rotate=90, anchor=near xticklabel},
         title style={anchor=north,yshift=20},
-        title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 10m,
         ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneday};
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedaytenminutes};
     \end{axis}
 \end{tikzpicture}
+
+\vspace{40pt}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel=time,
+        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+        ylabel=Wind Speed(m/s), 
+        date coordinates in=x, 
+        table/col sep=comma, 
+        date ZERO=2019-05-22, 
+        xticklabel=\month.\day. \hour:\minute, 
+        width=\textwidth,
+        height=0.54\textwidth,
+        xticklabel style={rotate=90, anchor=near xticklabel},
+        title style={anchor=north,yshift=20},
+        title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr,
+        ]
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedayonehour};
+    \end{axis}
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Week%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
     \begin{axis}[
         xlabel=time, 
         x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Value, 
+        ylabel=Wind Speed(m/s), 
         date coordinates in=x, 
         table/col sep=comma, 
         date ZERO=2019-05-17, 
         xticklabel=\month.\day. \hour:\minute, 
         width=\textwidth,
-        height=0.78\textwidth,
+        height=0.54\textwidth,
         xticklabel style={rotate=90, anchor=near xticklabel},
         title style={anchor=north,yshift=20},
-        title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 30m,
         ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweek};
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekthirtyminutes};
     \end{axis}
 \end{tikzpicture}
+
+\vspace{40pt}
 
 \begin{tikzpicture}
     \begin{axis}[
         xlabel=time, 
         x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Value, 
+        ylabel=Wind Speed(m/s), 
+        date coordinates in=x, 
+        table/col sep=comma, 
+        date ZERO=2019-05-17, 
+        xticklabel=\month.\day. \hour:\minute, 
+        width=\textwidth,
+        height=0.54\textwidth,
+        xticklabel style={rotate=90, anchor=near xticklabel},
+        title style={anchor=north,yshift=20},
+        title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr,
+        ]
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekfourhour};
+    \end{axis}
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Month%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel=time,
+        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+        ylabel=Wind Speed(m/s), 
         date coordinates in=x, 
         table/col sep=comma, 
         date ZERO=2019-04-22, 
         xticklabel=\month.\day. \hour:\minute, 
         width=\textwidth,
-        height=0.78\textwidth,
+        height=0.54\textwidth,
         xticklabel style={rotate=90, anchor=near xticklabel},
         title style={anchor=north,yshift=20},
-        title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr,
         ]
         \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthtwohour};
     \end{axis}
 \end{tikzpicture}
 
+\vspace{40pt}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel=time, 
+        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+        ylabel=Wind Speed(m/s), 
+        date coordinates in=x, 
+        table/col sep=comma, 
+        date ZERO=2019-04-22, 
+        xticklabel=\month.\day. \hour:\minute, 
+        width=\textwidth,
+        height=0.54\textwidth,
+        xticklabel style={rotate=90, anchor=near xticklabel},
+        title style={anchor=north,yshift=20},
+        title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day,
+        ]
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthoneday};
+    \end{axis}
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \clearpage
