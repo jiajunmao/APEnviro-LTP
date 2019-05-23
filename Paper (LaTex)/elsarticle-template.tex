@@ -1,9 +1,28 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
+\usepackage{pgfplots}
 \modulolinenumbers[5]
 
 \journal{Journal of \LaTeX\ Templates}
+
+
+%% This is where all the data go (temp)
+\pgfplotstableread[row sep=\\,col sep=&]{
+    location & number \\
+    Club Field & 5 \\
+    Headmaster's Field & 2 \\
+    South Field & 5 \\
+    Boardwalk & 5 \\
+}\locationpick 
+
+\pgfplotstableread[row sep=\\,col sep=&]{
+    location & yes & no \\
+    Club Field & 7 & 5\\
+    South Field & 1 & 11\\
+    Boardwalk & 4 & 8\\
+}\locationbeauty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Elsevier bibliography styles
@@ -39,7 +58,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
 \begin{frontmatter}
 
 \title{The Feasibility of Small-Scale Wind Power Generation at Kent School, Connecticut: \\An economic, environmental, and aesthetic analyses}
@@ -50,7 +68,13 @@
 \fntext[myfootnote]{Since 1880.}
 
 \begin{abstract}
-\indent Carbon-based energy source in electricity generation has already been challenged, in multiple researches, not only for their scarcity(\cite{mikael_depletion_of_fossil_fuel}) but also their negative impacts on earth’s environment. In face of severe environmental challenges such as global warming and its resulting problems such as extreme weathers(\cite{mikael_depletion_of_fossil_fuel}) and dramatically increasing species, such as amphibian's, extinction rate(\cite{alan_amphibian_extinction}), a clean and environmentally-friendly energy source is in need. It is evident through multiple researches that wind power has the potential of subsidizing, if not replacing, the role of power generation by those traditional energy sources. In light of the development of wind power worldwide, it is important for Kent School to also consider using wind power to fulfill parts of the electricity consumption on campus and hopefully reduce campus’ environmental footprint. This study specifically focuses on the feasibility of a small-scale wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.
+\indent Carbon-based energy source in electricity generation has already been challenged, in multiple researches, not only for their scarcity(\cite{mikael_depletion_of_fossil_fuel}) 
+but also their negative impacts on earth’s environment. In face of severe environmental challenges such as global warming and its resulting problems such as extreme 
+weathers(\cite{mikael_depletion_of_fossil_fuel}) and dramatically increasing species, such as amphibian's, extinction rate(\cite{alan_amphibian_extinction}), a clean and 
+environmentally-friendly energy source is in need. It is evidence through multiple researches that wind power has the potential of subsidizing, if not replacing, the role of 
+power generation by those traditional energy sources. In light of the development of wind power worldwide, it is important for Kent School to also consider using wind power to 
+fulfill parts of the electricity consumption on campus and hopefully reduce campus’ environmental footprint. This study specifically focuses on the feasibility of a small-scale 
+wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.
 \end{abstract}
 
 \begin{keyword}
@@ -64,51 +88,143 @@ Wind \sep Kent School\sep Small-scale \sep Energy \sep Economic-feasibility
 \clearpage
 \section{Introduction}
 
-Kent School receives its electricity from the CT state grid [CONFIRM] (the solar power generated is sold back to the power company), which means that according to the energy sources profile of the CT state grid, 63.7\% of the electricity that Kent School uses comes from natural gas and 31.2\% comes from nuclear. Also, the data obtained from Kent School’s Maintenance Department shows that the annual power consumption is [CONFIRM] MWh. Calculating from the average commercial electricity rates in the state of Connecticut, which is 14.65 cents/kWh, the annual spending of Kent School on electricity consumption is roughly [CONFIRM]. Therefore, the incentives for the installation of wind power generation facility on campus can be concluded into two following parts:
+Kent School receives its electricity from the CT state grid [CONFIRM] (the solar power generated is sold back to the power company), which means that according to the 
+energy sources profile of the CT state grid, 63.7\% of the electricity that Kent School uses comes from natural gas and 31.2\% comes from nuclear. Also, the data obtained 
+from Kent School’s Maintenance Department shows that the annual power consumption is [CONFIRM] MWh. Calculating from the average commercial electricity rates in the state 
+of Connecticut, which is 14.65 cents/kWh, the annual spending of Kent School on electricity consumption is roughly [CONFIRM]. Therefore, the incentives for the installation 
+of wind power generation facility on campus can be concluded into two following parts:
 \begin{itemize}
-    \item \textit{\textbf{environmental incentives.}} Reduction of school's overall environmental footprint in hope of contriubting to the alleviation of environmental problems caused by electricity consumption worldwide.
-    \item \textit{\textbf{economic incentives.}} Reduction of school's growing expenditure incurred by student's growing demand in electricity so that school can reach tuition/expenditure balance with each student.
+    \item \textit{\textbf{environmental incentives.}} Reduction of school's overall environmental footprint in hope of contriubting to the alleviation of environmental 
+    problems caused by electricity consumption worldwide.
+    \item \textit{\textbf{economic incentives.}} Reduction of school's growing expenditure incurred by student's growing demand in electricity so that school can reach 
+    tuition/expenditure balance with each student.
 \end{itemize}
 
 \subsection{environmental incentives}
-Though natural gas is a comparably cleaner energy source than traditional carbon-based sources such as coal or petroleum, the burning of natural gas nevertheless still releases carbon dioxide (\cite{cost_and_performance_baseline_for_fossil_energy_plants}), one of the most notorious greenhouse gases that are causing the global warming (\cite{Shakun2012_co2_global_warming}). Therefore, for environmental concerns, the burning of carbon-based energy source should be avoided as much as possible. Wind power, despite the carbon emission generated during the manufacturing processes of the turbines (\cite{Kaldellis_carbon_foortprint_of_offshore_wind_energy}), release mininum, if not none, additional green house gases once they become functional (\cite{IEEE_wind_carbon_reduction}).
-\\\indent Several reviews have been done regarding the potential or achievement of wind power in reducing the overall carbon emission and other environmentally harmful gas for electricity generation, as well as our reliance on fossil fuels. These studies, including \cite{rajat_cost_saving_and_emission_reduction}'s Cost savings and emission reduction capability of wind-integrated power systems and \cite{IEEE_wind_carbon_reduction}'s Wind Generation, Power System Operation, and Emission Reduction demonstrate the possibility and potential of reduction in Kent School’s carbon footprint if wind-power generating facilities are installed on campus, which will in turn further Kent’s path on making the school’s operations more environmentally sustainable.
+Though natural gas is a comparably cleaner energy source than traditional carbon-based sources such as coal or petroleum, the burning of natural gas nevertheless still 
+releases carbon dioxide (\cite{cost_and_performance_baseline_for_fossil_energy_plants}), one of the most notorious greenhouse gases that are causing the global 
+warming(\cite{Shakun2012_co2_global_warming}). Therefore, for environmental concerns, the burning of carbon-based energy source should be avoided as much as possible. 
+Wind power, despite the carbon emission generated during the manufacturing processes of the turbines (\cite{Kaldellis_carbon_foortprint_of_offshore_wind_energy}), release 
+mininum, if not none, additional green house gases once they become functional (\cite{IEEE_wind_carbon_reduction}).
+\\\indent Several reviews have been done regarding the potential or achievement of wind power in reducing the overall carbon emission and other environmentally harmful 
+gas for electricity generation, as well as our reliance on fossil fuels. These studies, including \cite{rajat_cost_saving_and_emission_reduction}'s Cost savings and 
+emission reduction capability of wind-integrated power systems and \cite{IEEE_wind_carbon_reduction}'s Wind Generation, Power System Operation, and Emission Reduction 
+demonstrate the possibility and potential of reduction in Kent School’s carbon footprint if wind-power generating facilities are installed on campus, which will in turn 
+further Kent’s path on making the school’s operations more environmentally sustainable.
  
 
 \subsection{economic incentives}
-It is evident that to provide students with quality education, Kent School needs to possess certain degree of financial affluency. However, according to various sources, including the Headmaster of the school, Fr. Shell, and the annual report of Kent School [NEED], there is a substantial gap existing between the tuition and cost for a student. Therefore, to make Kent education truly available to everyone, the operational cost gap for each student must be reduced. Using wind energy to subsidize the electricity consumption on campus might make the cost reduction possible.
-\\\indent Again, several studies, including Maria Isabel Blanco’s The economics of wind energy (\cite{maria_wind_energy_economics}), and The Economics of Wind Energy: A report by the European Wind Energy Association (\cite{european_wind_energy_association_report}), prove that the average cost of operating wind farm could be substantially lower compared to the cost of buying electricity from the regional power. Therefore, through the utilization of wind power on campus, Kent School can possibility reduce the operation cost for a single student become more financially self-sufficient, in turn providing future Kent students a better education.   
+It is evident that to provide students with quality education, Kent School needs to possess certain degree of financial affluency. However, according to various sources, 
+including the Headmaster of the school, Fr. Shell, and the annual report of Kent School [NEED], there is a substantial gap existing between the tuition and cost for a 
+student. Therefore, to make Kent education truly available to everyone, the operational cost gap for each student must be reduced. Using wind energy to subsidize the 
+electricity consumption on campus might make the cost reduction possible.
+\\\indent Again, several studies, including Maria Isabel Blanco’s The economics of wind energy (\cite{maria_wind_energy_economics}), and The Economics of Wind Energy: 
+A report by the European Wind Energy Association (\cite{european_wind_energy_association_report}), prove that the average cost of operating wind farm could be substantially 
+lower compared to the cost of buying electricity from the regional power. Therefore, through the utilization of wind power on campus, Kent School can possibility reduce the 
+operation cost for a single student become more financially self-sufficient, in turn providing future Kent students a better education.   
 
 
 \section{Methods}
 
 \subsection{Location Determination Factors}
-When determining the location of the possible wind farm, the location must satisfy the requirements including but not limited to the listed below. When considering a location, requirement 1 and 2 are strict requirement, meaning that if these two requirements are not fulfilled, a location should not be considered even if they satisfy requirement 3 and 4.
-Requirement 3 and 4 in turn, are loose requirements that do not necessarily have to be fulfilled if economic and environmental benefit of constructing a wind farm outweight the negative influence. However, if there is a statistically significant portion of student body voicing against the constructin of the wind farm for the reason mentioned in requirement 3 and 4, 
+When determining the location of the possible wind farm, the location must satisfy the requirements including but not limited to the listed below. When considering a 
+location, requirement 1 and 2 are strict requirement, meaning that if these two requirements are not fulfilled, a location should not be considered even if they satisfy 
+requirement 3 and 4.
+Requirement 3 and 4 in turn, are loose requirements that do not necessarily have to be fulfilled if economic and environmental benefit of constructing a wind farm outweight 
+the negative influence. However, if there is a statistically significant portion of student body voicing against the constructin of the wind farm for the reason mentioned 
+in requirement 3 and 4, 
 these two requirements will be weighted more heavily into consideration of the location of the wind farm.
 
 \begin{enumerate}
-    \item \emph{Power and constant wind.} Whether that location has constant and powerful wind to make the construction of a wind farm viable. The rough wind speed of that location is reported by students on campus and Jiajun and Chu Lam's personal experience around the campus.
-    \item \emph{Feasible location.} Whether that location has enough space on the ground and in the air to support the construction of a wind farm. This factor is determined by the proximity to another physical object on the ground level or in the air, such as dormitories, academic/religious buildings, mountains, etc.
-    \item \emph{Minimal influence on school operations.} Whether the prescence of a wind farm at that location will cause disturbance or negative influence on normal daily scool operations. For example, the noise generated by the wind turbine is factored into considerations.
-    \item \emph{Minimal influence on aesthetic beauty.} Whether the construction of a wind farm at that location will decrease the beauty of the lovely valley land of Kent. This factor is majorly based on Jiajun and Chu Lam's subjectie defintion of beauty.
+    \item \emph{Power and consistent wind.} Whether that location has consistent and powerful wind to make the construction of a wind farm viable. The rough wind speed 
+    of that location is reported by students on campus and Jiajun and Chu Lam's personal experience around the campus.
+    \item \emph{Feasible location.} Whether that location has enough space on the ground and in the air to support the construction of a wind farm. This factor is determined 
+    by the proximity to another physical object on the ground level or in the air, such as dormitories, academic/religious buildings, mountains, etc.
+    \item \emph{Minimal influence on school operations.} Whether the prescence of a wind farm at that location will cause disturbance or negative influence on normal daily 
+    school operations. For example, the noise generated by the wind turbine is factored into considerations.
+    \item \emph{Minimal influence on aesthetic beauty.} Whether the construction of a wind farm at that location will decrease the beauty of the lovely valley land of Kent. 
+    This factor is majorly based on Jiajun and Chu Lam's subjectie defintion of beauty.
 \end{enumerate}
 
 \subsection{Location Determination Process}
-In order to obtain a general location on campus where the wind is constant and powerful, a study is done with students population on campus. By assigning each of CL and Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students to respond to the question of 
-\textit{"Where on campus do you think the wind is strongest? And another location where the wind is the second strong?"}. From the all the responses we receive, we will determine two location with the highest vote and consider them for the second requirement of location feasibility.
- Taking the second requirement into consideration - location feasibility, we will analyze both sites' proximity to another physical object and conclude whether the two sites from the requirement above satisfy the criteria of having a clear ground level and aerial zone for the construction of a possible wind farm. If any location does not satisfy the criteria for this requirement, it will be eliminated from consideration.
- Then, from the remaining locations we will analyze their potential influence on school's normal operation, including but not limited to academic activities, atheletic activities, and recreational activities. The negative effects of wind farm will be analyzed and considered such as the noise generated and the space required on the ground level.
- At last, the remaining sites might cause influence on the aesthetic beauty of the Housatonic valley. A study identical to the one described in requirement one is conducted again with the question \textit{"Do you think the construction of a wind farm at site A and/or B will have negative impact on the aesthetic beauty of the surrouding area and the Kent campus?"}
-From the answers received we will analyze the majority side and take that into consideration. 
+In order to obtain a general location on campus where the wind is consistent and powerful, a study is done with students population on campus. By assigning each of CL and 
+Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students to respond to the question of 
+\textit{"Where on campus do you think the wind is strongest? And another location where the wind is the second strong?"}. From the all the responses we receive, we will 
+determine two location with the highest vote and consider them for the second requirement of location feasibility. Taking the second requirement into consideration - location feasibility, 
+we will analyze both sites' proximity to another physical object and conclude whether the two 
+ sites from the requirement above satisfy the criteria of having a clear ground level and aerial zone for the construction of a possible wind farm. If any location does 
+ not satisfy the criteria for this requirement, it will be eliminated from consideration. Then, from the remaining locations we will analyze their potential influence 
+ on school's normal operation, including but not limited to academic activities, atheletic activities, and recreational activities. The negative effects of wind farm will 
+ be analyzed and considered such as the noise generated and the space required on the ground level. At last, the remaining sites might cause influence on the aesthetic beauty 
+ of the Housatonic valley. A study identical to the one described in requirement one is conducted again with the question \textit{"Do you think the construction of a wind 
+ farm at site A and/or B will have negative impact on the aesthetic beauty of the surrouding area and the Kent campus?"} From the answers received we will analyze the 
+ majority side and take that into consideration. 
 
 \subsection{Feasibility Determination Process}
-After the location is determined by the process described in section 2.2, they will be analyzed for the feasbility of actually constructing a wind farm. Relevant data such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 856A will be used. The device will be setup in the chosen location and the fan that will be measuring the wind speed
- will be setup on top of a tripod 2m above ground level. After a continuous 24 hours of data collection, the data from the wind anemometer is then transferred to the computer and a graph of wind speed/flow volume against time will be plotted.
- \\\indent From the plotted graph as well as the wind speed/flow volume's relationship with the amount of electricity generateed we can estimate the economic benefit from the construction of such a wind farm and its possible environmental benefits and consequences. 
- At last we can compare the wind speed and flow volume, as well as the economic/environmental benefit of different locations across campus with each other and other locations in the United States where commercial wind farms are in operation to determine the final feasibility of constructing a wind farm on Kent School's property at a chosen location.
+After the location is determined by the process described in section 2.2, they will be analyzed for the feasbility of actually constructing a wind farm. Relevant data 
+such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 856A will be used. The device will be setup in the chosen location 
+and the fan that will be measuring the wind speedwill be setup on top of a tripod 2m above ground level. After a continuous 24 hours of data collection, the data from the 
+wind anemometer is then transferred to the computer and a graph of wind speed/flow volume against time will be plotted.
+\\\indent From the plotted graph as well as the wind speed/flow volume's relationship with the amount of electricity generateed we can estimate the economic benefit from 
+the construction of such a wind farm and its possible environmental benefits and consequences. At last we can compare the wind speed and flow volume, as well as the 
+economic/environmental benefit of different locations across campus with each other and other locations in the United States where commercial wind farms are in operation 
+to determine the final feasibility of constructing a wind farm on Kent School's property at a chosen location.
 
-\section{Feasibility Analyses}
+\section{Results}
+\subsection{Location Determination Results}
+After sending out requests to 60 students on campus with the question \textit{Where do you think the wind is strongest on campus?} and the options as following,
+\begin{enumerate}
+    \item {Club Field}
+    \item {Headmaster's Field}
+    \item {South Field}
+    \item {Boardwalk/Main}   
+\end{enumerate}
+we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey was demonstrated in \textit{Figure 1-1} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
+%TODO: Change the question in the methods section to make sure the paper is not self-conflicting
+
+
+\begin{tikzpicture}
+    \begin{axis}[
+            ybar,
+            bar width=1.2cm,
+            width = \textwidth,
+            height = 0.5*\textwidth,
+            symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
+            xtick=data,
+            nodes near coords,
+            ylabel={Numbers of Responses},
+            ymax=7,
+            title style={anchor=north,yshift=20},
+            title = Figure 1-1: Location of Strongest Wind at Kent School,
+        ]
+        \addplot table[x=location,y=number]{\locationpick};
+    \end{axis}
+\end{tikzpicture}
+\label{graph:locationpick}
+
+From the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
+from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
+\\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
+be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
+a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
+impossible location to construct a wind farm due to unclear ground level, thus removed from consideration. As the result, only South Field and Club Field qualify for being 
+considered for location determination factor 3 (minimal influence on school operations).
+\\\indent South Field and Club Field are fields activitely used for majority of outdoor atheletic trainings and events during the fall and spring terms of Kent School. Hence, 
+having a wind farm at those two locations might have impacts on school operations during the construction phase, operation phase, and decommission phase. During the construction 
+phase, areas on both of the fields will be appropriated for the construction of roads for transportation of building materials and passage of construction vehicles, as well as
+temporary placement of building materials. Therefore, no atheletic events and trainings can be carried out during the construction phase. After the construction ended and the wind 
+turbines are in operation, both fields still need to go through recovery period for all the grass that is necessary for atheletic events and trainings to grow back. Therefore, we 
+can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
+to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
+to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
+\\\indent From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} and the following choices:
+\begin{enumerate}
+    \item Club Field
+    \item South Field
+    \item Boardwalk/Main
+\end{enumerate}
+
+        
 
 \clearpage
 \bibliography{mybibfile.bib}    
