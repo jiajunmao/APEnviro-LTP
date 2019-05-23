@@ -2,6 +2,7 @@
 
 \usepackage{lineno,hyperref}
 \usepackage{pgfplots}
+\usepgfplotslibrary{dateplot, statistics}
 \modulolinenumbers[5]
 
 \journal{Journal of \LaTeX\ Templates}
@@ -23,7 +24,9 @@
     Boardwalk & 4 & 8\\
 }\locationbeauty
 
-\pgfplotstableread[col sep=comma]{Dickinson Wind Data.csv}\wind
+\pgfplotstableread[col sep=comma]{../Data/1day/windata10m.csv}\windoneday
+\pgfplotstableread[col sep=comma]{../Data/1week/windata30m.csv}\windoneweek
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -265,8 +268,40 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
 we received 12 responses 
 
 \begin{tikzpicture}
-    \begin{axis}
-        \addplot table [x=Time,y=WS (m/s)]{\wind};
+    \begin{axis}[
+        xlabel=time,
+        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+        ylabel=Value, 
+        date coordinates in=x, 
+        table/col sep=comma, 
+        date ZERO=2019-05-22, 
+        xticklabel=\day. \hour:\minute, 
+        width=\textwidth,
+        height=0.78\textwidth,
+        xticklabel style={rotate=90, anchor=near xticklabel},
+        title style={anchor=north,yshift=20},
+        title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        ]
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneday};
+    \end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel=time, 
+        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+        ylabel=Value, 
+        date coordinates in=x, 
+        table/col sep=comma, 
+        date ZERO=2019-05-17, 
+        xticklabel=\day. \hour:\minute, 
+        width=\textwidth,
+        height=0.78\textwidth,
+        xticklabel style={rotate=90, anchor=near xticklabel},
+        title style={anchor=north,yshift=20},
+        title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        ]
+        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweek};
     \end{axis}
 \end{tikzpicture}
 
