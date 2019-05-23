@@ -22,6 +22,8 @@
     South Field & 1 & 11\\
     Boardwalk & 4 & 8\\
 }\locationbeauty
+
+\pgfplotstableread[col sep=comma]{Dickinson Wind Data.csv}\wind
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -217,14 +219,22 @@ turbines are in operation, both fields still need to go through recovery period 
 can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
 to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
 to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
-\\\indent From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} and the following choices:
+\\\indent From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} 
+and the following choices,
+
 \begin{enumerate}
     \item Club Field
     \item South Field
     \item Boardwalk/Main
 \end{enumerate}
 
-        
+we received 12 responses 
+
+\begin{tikzpicture}
+    \begin{axis}
+        \addplot table [x=Time,y=WS (m/s)]{\wind};
+    \end{axis}
+\end{tikzpicture}
 
 \clearpage
 \bibliography{mybibfile.bib}    
