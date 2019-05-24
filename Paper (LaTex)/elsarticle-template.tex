@@ -201,27 +201,26 @@ After sending out requests to 60 students on campus with the question \textit{Wh
 we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey is demonstrated in \textit{Figure 1-1} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
 %TODO: Change the question in the methods section to make sure the paper is not self-conflicting
 
-\clearpage
-
 \begin{figure}
-    \caption{Location of Strongest Wind at Kent School}
     \begin{tikzpicture}
         \begin{axis}[
                 ybar,
                 bar width=1.2cm,
                 width = \textwidth,
-                height = 0.4*\textwidth,
+                height = 0.47*\textwidth,
                 symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
                 xtick=data,
                 nodes near coords,
                 ylabel={Numbers of Responses},
                 ymax=7,
                 ymin=0,
+                title style={anchor=north,yshift=20},
+                title = Figure 1-2: Location of Strongest Wind at Kent School,
             ]
             \addplot table[x=location,y=number]{\locationpick};
         \end{axis}
     \end{tikzpicture}
-    \label{fig:locationpick}
+    \label{graph:locationpick}
 \end{figure}
 
 From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} 
@@ -231,41 +230,37 @@ and the following choices,
     \item South Field
     \item Boardwalk/Main
 \end{enumerate}
-
 we received 12 responses from those 60 questionnaires, a resposne rate of 20\%. The result of the survey is demonstrated in \textit{Figure1-2} with 58\% of responses saying yes 
 for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of responses saying yes to Boardwalk.\\
 
-\begin{figure}[!h]
-    \caption{Will Installing Wind Turbines Disrupt Kent Scenery?}
-    \begin{tikzpicture}
-        \begin{axis}[
-                ybar,
-                enlarge x limits = {abs=1.8cm},
-                legend style={                    
-                legend cell align=right,       
-                legend columns=1,    
-                anchor=west}, 
-                area legend,
-                bar width=1.2cm,
-                width = \textwidth,
-                height = 0.4*\textwidth,
-                symbolic x coords={Club Field,South Field,Boardwalk},
-                xtick=data,
-                nodes near coords,
-                ylabel={Numbers of Responses},
-                ymax=13,
-                ymin=0,
-            ]
-            \addplot table[x=location,y=yes]{\locationbeauty};
-            \addplot table[x=location,y=no]{\locationbeauty};
-            \addlegendentry{yes}
-            \addlegendentry{no}
-        \end{axis}
-        \label{graph:locationbeauty}
-    \end{tikzpicture}
-\end{figure}
-
-\clearpage
+\begin{tikzpicture}
+    \begin{axis}[
+            ybar,
+            enlarge x limits = {abs=1.8cm},
+            legend style={                    
+            legend cell align=right,       
+            legend columns=1,    
+            anchor=west}, 
+            area legend,
+            bar width=1.2cm,
+            width = \textwidth,
+            height = 0.47*\textwidth,
+            symbolic x coords={Club Field,South Field,Boardwalk},
+            xtick=data,
+            nodes near coords,
+            ylabel={Numbers of Responses},
+            ymax=13,
+            ymin=0,
+            title style={anchor=north,yshift=20},
+            title = Figure 1-2: Will Installing Wind Turbines Disrupt Kent Scenery?,
+        ]
+        \addplot table[x=location,y=yes]{\locationbeauty};
+        \addplot table[x=location,y=no]{\locationbeauty};
+        \addlegendentry{yes}
+        \addlegendentry{no}
+    \end{axis}
+    \label{graph:locationbeauty}
+\end{tikzpicture}
 
 For reasons mentioned Section X.X of the error analysis, only wind speed data from the anemometer on top of Dickinson Auditorium is preserved and recorded. We have manged to obtain 
 the wind data for a single day (5/22/2019), an entire week (5/15-5/22/2019) and an entire month (4/22-5/22/2019). For each individual time period we plotted the detail wind speed data 
@@ -285,7 +280,6 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) on 5/22/2019 Averaged for 10m}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time,
@@ -298,18 +292,17 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
-            title style={anchor=north,yshift=20}
+            title style={anchor=north,yshift=20},
+            title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 10m,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedaytenminutes};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneday:tenminutes}
 \end{figure}
 
 %\vspace{40pt}
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time,
@@ -322,11 +315,12 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedayonehour};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneday:onehour}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -334,7 +328,6 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 30m}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time, 
@@ -347,17 +340,17 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 30m,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekthirtyminutes};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneweek:thirtyminutes}
 \end{figure}
 
 %\vspace{40pt}
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time, 
@@ -370,11 +363,12 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekfourhour};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneweek:fourhour}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -383,7 +377,6 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time,
@@ -396,17 +389,17 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthtwohour};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:onemonth:twohour}
 \end{figure}
 
 %\vspace{40pt}
 
 \begin{figure}
-    \caption{Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time, 
@@ -419,22 +412,21 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day,
             ]
             \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthoneday};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:onemonth:oneday}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
-
 \section{Analysis}
 \label{sec:analysis}
 
-Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
+From the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
 from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
 \\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
 be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
@@ -464,7 +456,6 @@ error analysis, we kept Boardwalk/main for the feasibility analysis despite the 
 \\\indent To conclude, Club Field, South Field and Boardwalk/Main all will be considered as qualifying locations for the construction of a wind farm for Kent School and all threee locations will be analyzed 
 for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweight the environmental cost and disturbances to the school operation.
 %TODO: a statistical test
-
 
 
 \clearpage
