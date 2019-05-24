@@ -181,6 +181,8 @@ the construction of such a wind farm and its possible environmental benefits and
 economic/environmental benefit of different locations across campus with each other and other locations in the United States where commercial wind farms are in operation 
 to determine the final feasibility of constructing a wind farm on Kent School's property at a chosen location.
 
+
+
 \section{Results}
 \subsection{Location Determination Results}
 After sending out requests to 60 students on campus with the question \textit{Where do you think the wind is strongest on campus?} and the options as following,
@@ -193,54 +195,37 @@ After sending out requests to 60 students on campus with the question \textit{Wh
 we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey is demonstrated in \textit{Figure 1-1} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
 %TODO: Change the question in the methods section to make sure the paper is not self-conflicting
 
-
-\begin{tikzpicture}
-    \begin{axis}[
-            ybar,
-            bar width=1.2cm,
-            width = \textwidth,
-            height = 0.47*\textwidth,
-            symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
-            xtick=data,
-            nodes near coords,
-            ylabel={Numbers of Responses},
-            ymax=7,
-            ymin=0,
-            title style={anchor=north,yshift=20},
-            title = Figure 1-2: Location of Strongest Wind at Kent School,
-        ]
-        \addplot table[x=location,y=number]{\locationpick};
-    \end{axis}
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+                ybar,
+                bar width=1.2cm,
+                width = \textwidth,
+                height = 0.47*\textwidth,
+                symbolic x coords={Club Field,Headmaster's Field,South Field,Boardwalk},
+                xtick=data,
+                nodes near coords,
+                ylabel={Numbers of Responses},
+                ymax=7,
+                ymin=0,
+                title style={anchor=north,yshift=20},
+                title = Figure 1-2: Location of Strongest Wind at Kent School,
+            ]
+            \addplot table[x=location,y=number]{\locationpick};
+        \end{axis}
+    \end{tikzpicture}
     \label{graph:locationpick}
-\end{tikzpicture}
+\end{figure}
 
-From the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
-from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
-\\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
-be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
-a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
-impossible location to construct a wind farm due to unclear ground level, thus removed from consideration. As the result, only South Field and Club Field qualify for being 
-considered for location determination factor 3 (minimal influence on school operations).
-\\\indent South Field and Club Field are fields activitely used for majority of outdoor atheletic trainings and events during the fall and spring terms of Kent School. Hence, 
-having a wind farm at those two locations might have impacts on school operations during the construction phase, operation phase, and decommission phase. During the construction 
-phase, areas on both of the fields will be appropriated for the construction of roads for transportation of building materials and passage of construction vehicles, as well as
-temporary placement of building materials. Therefore, no atheletic events and trainings can be carried out during the construction phase. After the construction ended and the wind 
-turbines are in operation, both fields still need to go through recovery period for all the grass that is necessary for atheletic events and trainings to grow back. Therefore, we 
-can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
-to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
-to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
-\\\indent From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} 
+From the 60 survey we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} 
 and the following choices,
-
 \begin{enumerate}
     \item Club Field
     \item South Field
     \item Boardwalk/Main
 \end{enumerate}
 we received 12 responses from those 60 questionnaires, a resposne rate of 20\%. The result of the survey is demonstrated in \textit{Figure1-2} with 58\% of responses saying yes 
-for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of responses saying yes to Boardwalk.
-\\
-
+for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of responses saying yes to Boardwalk.\\
 
 \begin{tikzpicture}
     \begin{axis}[
@@ -271,6 +256,175 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
     \label{graph:locationbeauty}
 \end{tikzpicture}
 
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% One Day%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time,
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-22, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 10m,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedaytenminutes};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\vspace{40pt}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time,
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-22, 
+            xticklabel=\month.\day. \hour:\minute,
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedayonehour};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Week%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time, 
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-17, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 30m,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekthirtyminutes};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\vspace{40pt}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time, 
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-17, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekfourhour};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Month%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time,
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-04-22, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthtwohour};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\vspace{40pt}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time, 
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Wind Speed(m/s), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-04-22, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20},
+            title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day,
+            ]
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthoneday};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Analysis}
+
+From the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
+from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
+\\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
+be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
+a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
+impossible location to construct a wind farm due to unclear ground level, thus removed from consideration. As the result, only South Field and Club Field qualify for being 
+considered for location determination factor 3 (minimal influence on school operations).
+\\\indent South Field and Club Field are fields activitely used for majority of outdoor atheletic trainings and events during the fall and spring terms of Kent School. Hence, 
+having a wind farm at those two locations might have impacts on school operations during the construction phase, operation phase, and decommission phase. During the construction 
+phase, areas on both of the fields will be appropriated for the construction of roads for transportation of building materials and passage of construction vehicles, as well as
+temporary placement of building materials. Therefore, no atheletic events and trainings can be carried out during the construction phase. After the construction ended and the wind 
+turbines are in operation, both fields still need to go through recovery period for all the grass that is necessary for atheletic events and trainings to grow back. Therefore, we 
+can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
+to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
+to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
+
+
+
 Because 91.7\% of the people responded think that constructing a wind farm at South Field would not disrupt the landscape of Kent School, South Field satifies location determination factor 4 
 and qualify to become one of the potential site for the construction of the wind farm. Surprisingly, though being an open field similar to South Field, 58\% of people responded think that constructing
 a wind farm at Club Field would actually disrupt the beautiful landscape of Kent School. This might be caused by Club Field's close proximity to the main campus so that students will be able to 
@@ -283,143 +437,6 @@ error analysis, we kept Boardwalk/main for the feasibility analysis despite the 
 \\\indent To conclude, Club Field, South Field and Boardwalk/Main all will be considered as qualifying locations for the construction of a wind farm for Kent School and all threee locations will be analyzed 
 for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweight the environmental cost and disturbances to the school operation.
 %TODO: a statistical test
-
-\clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% One Day%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time,
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-05-22, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 10m,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedaytenminutes};
-    \end{axis}
-\end{tikzpicture}
-
-\vspace{40pt}
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time,
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-05-22, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-1: Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedayonehour};
-    \end{axis}
-\end{tikzpicture}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%One Week%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time, 
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-05-17, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 30m,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekthirtyminutes};
-    \end{axis}
-\end{tikzpicture}
-
-\vspace{40pt}
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time, 
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-05-17, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-2: Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekfourhour};
-    \end{axis}
-\end{tikzpicture}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%One Month%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time,
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-04-22, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthtwohour};
-    \end{axis}
-\end{tikzpicture}
-
-\vspace{40pt}
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=time, 
-        x label style={at={(axis description cs:1.05,0.12)},anchor=north},
-        ylabel=Wind Speed(m/s), 
-        date coordinates in=x, 
-        table/col sep=comma, 
-        date ZERO=2019-04-22, 
-        xticklabel=\month.\day. \hour:\minute, 
-        width=\textwidth,
-        height=0.54\textwidth,
-        xticklabel style={rotate=90, anchor=near xticklabel},
-        title style={anchor=north,yshift=20},
-        title = Figure 2-3: Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day,
-        ]
-        \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthoneday};
-    \end{axis}
-\end{tikzpicture}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \clearpage
