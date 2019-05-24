@@ -1,12 +1,13 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
+\usepackage{comment}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot, statistics}
 \modulolinenumbers[5]
 
 \usepackage[figureposition=top]{caption}
-\captionsetup[figure]{%
+\captionsetup[figure]{
     font=normalsize,
     labelfont=normalsize,
     justification=centering}
@@ -82,7 +83,6 @@
 %% Group authors per affiliation:
 \author{Jiajun Mao, Chun Lam Cheng}
 \address{1 Macedonia Rd., Kent, CT}
-\fntext[myfootnote]{Since 1880.}
 
 \begin{abstract}
 \indent Carbon-based energy source in electricity generation has already been challenged, in multiple researches, not only for their scarcity(\cite{mikael_depletion_of_fossil_fuel}) 
@@ -91,7 +91,7 @@ weathers(\cite{mikael_depletion_of_fossil_fuel}) and dramatically increasing spe
 environmentally-friendly energy source is in need. It is evidence through multiple researches that wind power has the potential of subsidizing, if not replacing, the role of 
 power generation by those traditional energy sources. In light of the development of wind power worldwide, it is important for Kent School to also consider using wind power to 
 fulfill parts of the electricity consumption on campus and hopefully reduce campus’ environmental footprint. This study specifically focuses on the feasibility of a small-scale 
-wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.
+wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.\\
 \end{abstract}
 
 \begin{keyword}
@@ -276,7 +276,7 @@ speed during morning and evening are only around 0.5m/s. It can also be seen fro
 a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind speed is generally higher at the end of a month.
 %TODO: might change after more data is added to the plot
 
-\vspace{100pt}
+%\vspace{100pt}
 \textit{\textbf{Graphs are on next page for better formatting}}
 \clearpage
 
@@ -306,7 +306,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \label{wind:oneday:tenminutes}
 \end{figure}
 
-\vspace{40pt}
+%\vspace{40pt}
 
 \begin{figure}
     \caption{Wind Speed(Boardwalk) on 5/22/2019 Averaged for 1hr}
@@ -354,7 +354,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \label{wind:oneweek:thirtyminutes}
 \end{figure}
 
-\vspace{40pt}
+%\vspace{40pt}
 
 \begin{figure}
     \caption{Wind Speed(Boardwalk) 5/15-5/22/2019 Averaged for 4hr}
@@ -365,7 +365,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             ylabel=Wind Speed(m/s), 
             date coordinates in=x, 
             table/col sep=comma, 
-            date ZERO=2019-05-17, 
+            date ZERO=2019-05-17,
             xticklabel=\month.\day. \hour:\minute, 
             width=\textwidth,
             height=0.54\textwidth,
@@ -380,6 +380,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %One Month%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{figure}
     \caption{Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 2hr}
@@ -402,7 +403,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \label{wind:onemonth:twohour}
 \end{figure}
 
-\vspace{40pt}
+%\vspace{40pt}
 
 \begin{figure}
     \caption{Wind Speed(Boardwalk) 4/22-5/22/2019 Averaged for 1 day}
@@ -431,8 +432,9 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 \clearpage
 
 \section{Analysis}
+\label{sec:analysis}
 
-Combining the result shown in \textit{Figure\ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
+Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
 from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
 \\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
 be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
