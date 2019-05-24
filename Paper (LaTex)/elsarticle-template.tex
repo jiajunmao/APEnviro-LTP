@@ -3,6 +3,13 @@
 \usepackage{lineno,hyperref}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot, statistics}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \modulolinenumbers[5]
 
 \journal{Journal of \LaTeX\ Templates}
@@ -522,6 +529,38 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 
 \subsection{Error Analysis}
 \label{sec:analysis:erroranalysis}
+
+Though we tried for our best to consider potential locations around the campus that will qualify for the construction of a wind farm, huge experimental error is introduced when determining 
+the feasibility of the location. Most of the experimental errors are introduced during the feasibility determination process when the wind speed at South Field, Club Field and Boardwalk are measured.
+
+\subsubsection{Unrealistic height of anemometer}
+For the HoldPeak 856B anemometer, we installed the anemometer on top of a normal commercial camera tripod. Therefore, the maxium height of measurement for the anemometer was 2m above ground level. 
+A usual commercial wind turbine is not located at this height, apparently, since at this level, the movement of wind is going to be obstructed by surrounding physical objects, such as buildings 
+(Hoerle Hall and Hockey Rink) and natural objects(Trees), and the wind speed pattern is going to be erratic. As the result, the wind speed measured by the HoldPeak instrument at South Field and 
+Club Field do not accurately reflect the actual wind speed and wind speed pattern a commercial wind turbine installed at those locations will experience. 
+\\\indent The same bias also exist in the data obtained from the AQM65 located on top of Dickinson Auditorium. Although AQM65 is located substaintially higher than the HoldPeak instrument measuring 
+the wind speed at Club Field and South Field, it is still at a much lower altitutde than a normal wind turbine, which on average is about 100m from the ground. Therefore, the data obtianed from 
+AQM65 also does not reflect the wind speed and wind speed pattern at the height where a wind turbine will be installed. 
+\\\indent However, due to limited measuring equipment, we can only measure the wind speed close to ground level. Therefore, 
+the wind speed data obtained from AQM65 and HoldPeak 865B will be used as indicators for the wind speed at higher altitude of that location.
+
+\subsubsection{Single direction measurement}
+Though not a problem for the AQM65 on top of Dickinson Auditorium, the fact that wind speed can only be measured from a constant angle by the measuring fan is a problem for the HoldPeak instrument. 
+Modern wind turbines all possess the ability to yaw, pitch and rotate horizontally to match up to the direction of wind to obtain greatest wind speed thus optimal amount of power generation. The fan-like 
+design of the HoldPeak 865B make it only capable of measuring the speed of wind coming from one direction. When the wind changes direction, it will register on HoldPeak as decreased wind speed rather 
+than change of direction. Contributing bias in the final wind speed data. 
+\begin{figure}[!h]
+    \includegraphics[
+        width=0.5\textwidth
+        height=0.25\textwidth]{../Data/holdpeak.jpg}
+    \caption{Picture of HoldPeak 822B}
+    \label{fig:holdpeak}
+\end{figure}
+
+\subsection{Data Destruction}
+
+
+\subsection{Feasbility Analysis}
 
 
 Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
