@@ -98,6 +98,7 @@ Wind \sep Kent School\sep Small-scale \sep Energy \sep Economic-feasibility
 
 \clearpage
 \section{Introduction}
+\label{sec:Introduction}
 
 Kent School receives its electricity from the CT state grid [CONFIRM] (the solar power generated is sold back to the power company), which means that according to the 
 energy sources profile of the CT state grid, 63.7\% of the electricity that Kent School uses comes from natural gas and 31.2\% comes from nuclear. Also, the data obtained 
@@ -112,6 +113,7 @@ of wind power generation facility on campus can be concluded into two following 
 \end{itemize}
 
 \subsection{environmental incentives}
+\label{sec:intro:environincentives}
 Though natural gas is a comparably cleaner energy source than traditional carbon-based sources such as coal or petroleum, the burning of natural gas nevertheless still 
 releases carbon dioxide (\cite{cost_and_performance_baseline_for_fossil_energy_plants}), one of the most notorious greenhouse gases that are causing the global 
 warming(\cite{Shakun2012_co2_global_warming}). Therefore, for environmental concerns, the burning of carbon-based energy source should be avoided as much as possible. 
@@ -125,6 +127,7 @@ further Kent’s path on making the school’s operations more environmentally s
  
 
 \subsection{economic incentives}
+\label{sec:intro:econincentives}
 It is evident that to provide students with quality education, Kent School needs to possess certain degree of financial affluency. However, according to various sources, 
 including the Headmaster of the school, Fr. Shell, and the annual report of Kent School [NEED], there is a substantial gap existing between the tuition and cost for a 
 student. Therefore, to make Kent education truly available to everyone, the operational cost gap for each student must be reduced. Using wind energy to subsidize the 
@@ -136,6 +139,7 @@ operation cost for a single student become more financially self-sufficient, in 
 
 
 \section{Methods}
+\label{sec:methods}
 
 \subsection{Location Determination Factors}
 When determining the location of the possible wind farm, the location must satisfy the requirements including but not limited to the listed below. When considering a 
@@ -158,6 +162,7 @@ these two requirements will be weighted more heavily into consideration of the l
 \end{enumerate}
 
 \subsection{Location Determination Process}
+\label{sec:methods:locdeterprocess}
 In order to obtain a general location on campus where the wind is consistent and powerful, a study is done with students population on campus. By assigning each of CL and 
 Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students to respond to the question of 
 \textit{"Where on campus do you think the wind is strongest? And another location where the wind is the second strong?"}. From the all the responses we receive, we will 
@@ -172,6 +177,7 @@ we will analyze both sites' proximity to another physical object and conclude wh
  majority side and take that into consideration. 
 
 \subsection{Feasibility Determination Process}
+\label{sec:methods:feasdeterprocess}
 After the location is determined by the process described in section 2.2, they will be analyzed for the feasbility of actually constructing a wind farm. Relevant data 
 such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 856A will be used. The device will be setup in the chosen location 
 and the fan that will be measuring the wind speedwill be setup on top of a tripod 2m above ground level. After a continuous 24 hours of data collection, the data from the 
@@ -184,7 +190,9 @@ to determine the final feasibility of constructing a wind farm on Kent School's 
 
 
 \section{Results}
+\label{sec:results}
 \subsection{Location Determination Results}
+\label{sec:results:locdeterresults}
 After sending out requests to 60 students on campus with the question \textit{Where do you think the wind is strongest on campus?} and the options as following,
 \begin{enumerate}
     \item {Club Field}
@@ -261,6 +269,7 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
 
 \clearpage
 \subsection{Location Wind Speed Result}
+\label{sec:results:locwindspeedresults}
 For reasons mentioned Section X.X of the error analysis, only wind speed data from the anemometer on top of Dickinson Auditorium is preserved and recorded. We have manged to obtain 
 the wind data for a single day (5/22/2019), an entire week (5/15-5/22/2019) and an entire month (4/22-5/22/2019). For each individual time period we plotted the detail wind speed data 
 averaged for relatively small time frame to accurately reflect the wind speed during that period of time while preserving the visibility in the graphed plots. Then for each time frame 
@@ -425,8 +434,95 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
+\subsection{Location Power Output Result}
+\label{sec:results:locationpowerresults}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% One Day%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+    \caption{Instantaneous Power Generation(Boardwalk) on 5/22/2019 Averaged for 10m}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time,
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Power (kW), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-22, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            title style={anchor=north,yshift=20}
+            ]
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonedaytenminutes};
+        \end{axis}
+    \end{tikzpicture}
+    \label{wind:oneday:tenminutes}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Week%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+    \caption{Instantaneous Power Generation((Boardwalk) 5/15-5/22/2019 Averaged for 30m}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time, 
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Power (kW), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-05-17, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            ]
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windoneweekthirtyminutes};
+        \end{axis}
+    \end{tikzpicture}
+    \label{wind:oneweek:thirtyminutes}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%One Month%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+    \caption{Instantaneous Power Generation((Boardwalk) 4/22-5/22/2019 Averaged for 2hr}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=time,
+            x label style={at={(axis description cs:1.05,0.12)},anchor=north},
+            ylabel=Power (kW), 
+            date coordinates in=x, 
+            table/col sep=comma, 
+            date ZERO=2019-04-22, 
+            xticklabel=\month.\day. \hour:\minute, 
+            width=\textwidth,
+            height=0.54\textwidth,
+            xticklabel style={rotate=90, anchor=near xticklabel},
+            ]
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonemonthtwohour};
+        \end{axis}
+    \end{tikzpicture}
+    \label{wind:onemonth:twohour}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{Analysis}
+\label{sec:analysis}
+
+\subsection{Error Analysis}
+\label{sec:analysis:erroranalysis}
+
 
 Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
 from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
