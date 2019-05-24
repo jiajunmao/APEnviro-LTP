@@ -1,16 +1,9 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
-\usepackage{comment}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot, statistics}
 \modulolinenumbers[5]
-
-\usepackage[figureposition=top]{caption}
-\captionsetup[figure]{
-    font=normalsize,
-    labelfont=normalsize,
-    justification=centering}
 
 \journal{Journal of \LaTeX\ Templates}
 
@@ -83,6 +76,7 @@
 %% Group authors per affiliation:
 \author{Jiajun Mao, Chun Lam Cheng}
 \address{1 Macedonia Rd., Kent, CT}
+\fntext[myfootnote]{Since 1880.}
 
 \begin{abstract}
 \indent Carbon-based energy source in electricity generation has already been challenged, in multiple researches, not only for their scarcity(\cite{mikael_depletion_of_fossil_fuel}) 
@@ -91,7 +85,7 @@ weathers(\cite{mikael_depletion_of_fossil_fuel}) and dramatically increasing spe
 environmentally-friendly energy source is in need. It is evidence through multiple researches that wind power has the potential of subsidizing, if not replacing, the role of 
 power generation by those traditional energy sources. In light of the development of wind power worldwide, it is important for Kent School to also consider using wind power to 
 fulfill parts of the electricity consumption on campus and hopefully reduce campus’ environmental footprint. This study specifically focuses on the feasibility of a small-scale 
-wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.\\
+wind farm on Kent School’s campus through economic, environmental and aesthetic perspectives.
 \end{abstract}
 
 \begin{keyword}
@@ -262,17 +256,6 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
     \label{graph:locationbeauty}
 \end{tikzpicture}
 
-For reasons mentioned Section X.X of the error analysis, only wind speed data from the anemometer on top of Dickinson Auditorium is preserved and recorded. We have manged to obtain 
-the wind data for a single day (5/22/2019), an entire week (5/15-5/22/2019) and an entire month (4/22-5/22/2019). For each individual time period we plotted the detail wind speed data 
-averaged for relatively small time frame to accurately reflect the wind speed during that period of time while preserving the visibility in the graphed plots. Then for each time frame 
-we plotted an extra graph using a moving average of a longer period of time, which shows the general trend of the wind speed.
-\\\indent It can be seen from \textit{Figure 2-1-2}(single day) that for a single day during spring time, highest wind speed occurs during midday with wind speed reaching as high as 2m/s while the wind 
-speed during morning and evening are only around 0.5m/s. It can also be seen from \textit{Figure 2-2-2}(entire week) that the general trend of wind speed during a week corresponds to daily trend without 
-a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind speed is generally higher at the end of a month.
-%TODO: might change after more data is added to the plot
-
-%\vspace{100pt}
-\textit{\textbf{Graphs are on next page for better formatting}}
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -300,7 +283,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \end{tikzpicture}
 \end{figure}
 
-%\vspace{40pt}
+\vspace{40pt}
 
 \begin{figure}
     \begin{tikzpicture}
@@ -348,7 +331,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \end{tikzpicture}
 \end{figure}
 
-%\vspace{40pt}
+\vspace{40pt}
 
 \begin{figure}
     \begin{tikzpicture}
@@ -358,7 +341,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
             ylabel=Wind Speed(m/s), 
             date coordinates in=x, 
             table/col sep=comma, 
-            date ZERO=2019-05-17,
+            date ZERO=2019-05-17, 
             xticklabel=\month.\day. \hour:\minute, 
             width=\textwidth,
             height=0.54\textwidth,
@@ -374,7 +357,6 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %One Month%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{figure}
     \begin{tikzpicture}
@@ -397,7 +379,7 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
     \end{tikzpicture}
 \end{figure}
 
-%\vspace{40pt}
+\vspace{40pt}
 
 \begin{figure}
     \begin{tikzpicture}
@@ -424,7 +406,6 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Analysis}
-\label{sec:analysis}
 
 From the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
 from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
