@@ -1,6 +1,7 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
+\usepackage{wasysym}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot, statistics}
 \usepackage{titlesec}
@@ -467,7 +468,7 @@ a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth
             \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonedaytenminutes};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneday:tenminutes}
+    \label{power:oneday:tenminutes}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -492,7 +493,7 @@ a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth
             \addplot+[no markers] table[x=Time,y=Power (kw)] {\windoneweekthirtyminutes};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:oneweek:thirtyminutes}
+    \label{power:oneweek:thirtyminutes}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,7 +501,7 @@ a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!h]
-    \caption{Instantaneous Power Generation((Boardwalk) 4/22-5/22/2019 Averaged for 2hr}
+    \caption{Instantaneous Power Generation((Boa    brdwalk) 4/22-5/22/2019 Averaged for 2hr}
     \begin{tikzpicture}
         \begin{axis}[
             xlabel=time,
@@ -517,7 +518,7 @@ a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth
             \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonemonthtwohour};
         \end{axis}
     \end{tikzpicture}
-    \label{wind:onemonth:twohour}
+    \label{power:onemonth:twohour}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -530,7 +531,7 @@ a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth
 \subsection{Location Determination Analysis}
 
 Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section \ref{sec:methods:locdeterprocess}}, Club Field, South Field and 
-Boardwalk all satisfy the the Location Determination Factor 1 (powerful and consitent wind) from the survey result and thus qualify for being considered for the Location Determination Factor 2 (feasible location).  %/TODO: Conduct statisitcal test
+Boardwalk all satisfy the the Location Determination Factor 1 (powerful and consistent wind) from the survey result and thus qualify for being considered for the Location Determination Factor 2 (feasible location).  %/TODO: Conduct statisitcal test
 \\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
 be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the Location Determination Factor 2 by not only having 
 a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
@@ -555,20 +556,49 @@ will have negative impacts on the Kent landscape. As the result, Club Field will
 the main campus and in close proximity to areas of frequency academic activities and student life (dormitories, dining hall, chapel, etc.). Therefore, because of the reason mentioned in \textit{Section \ref{sec:analysis:erroranalysis:datadestruction}} of 
 error analysis, we kept Boardwalk/main for the feasibility analysis despite the fact that it does not satisfy Location Determination Factor 2, which is a strict requirement.
 \\\indent To conclude, Club Field, South Field and Boardwalk/Main all will be considered as qualifying locations for the construction of a wind farm for Kent School and all threee locations will be analyzed 
-for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweight the environmental cost and disturbances to the school operation.
+for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweigh the environmental cost and disturbances to the school operation.
 %TODO: a statistical test
 
 
-\subsection{Feasbility Analysis}
+\subsection{Feasibility Analysis}
 
 Because of the reason mentioned \textit{Section \ref{sec:analysis:erroranalysis:datadestruction}}, we only have the data available from the AQM65 on top of Dickinson Auditorium and a selection of its data is plotted 
 from \textit{Figure \ref{wind:oneday:tenminutes}} to \textit{\ref{wind:onemonth:oneday}}. Since we lack of data regarding wind speed at South Field and Club Field, we cannot determine the feasibility of constructing a 
 wind farm at that location. Therefore, we are only able to determine whether it is feasible to construct a wind farm somewhere near Boardwalk with the data obtained. A wind turbine's power output can 
 be calculated with the following equation:
-
 \begin{equation}
+    \label{equ:windpower}
     P=1/2*k*C_{p}*\rho*A*V^3
 \end{equation}
+where $P$ is the power generate by the wind turbine measured in kilowatts; $k$ is a constant, $0.000133$; $C_{p}$ is the power coefficient of the wind turbine, usually ranging from $0.25$ to $0.45$ depending on the 
+specific model; $\rho$ is the air density around the wind turbine when it is producing power measured in $lb/ft^3$; $A$ is the area the fan blade of the wind turbine swept through measured in $ft^2$; and at last $V$ 
+is the wind speed measured in $mph$.
+\\\indent We can use equation \ref{equ:windpower} to arrive at a plot for the instantaneous power generation for the wind turbine if one is build on top of Dickinson Auditorium. After computing the power generation 
+of the possible wind turbine for the time period of a day, a week and a month, we arrive at \textit{Figure \ref{power:oneday:tenminutes}} for one day generation, \textit{Figure \ref{power:oneweek:thirtyminutes}} for 
+one week generation, and \textit{Figure \ref{power:onemonth:twohour}} for one month generation. After the plot for instantaneous power generation is obtained, we approximate the integral of the curve by using 
+the Riemann sum using the following equation.
+\begin{equation}
+    \label{equ:windinterval}
+    Interval = \frac{total\ time}{averaging\ period}
+\end{equation}
+
+\begin{equation}q
+    \label{equ:windenergy}
+    \sum_{n=1}^{interval} interval*P
+\end{equation}
+\\\indent As the result, the estimated power generation of a wind turbine placed at Boardwalk would be $36.78kWh$ per day, $259.51kWh$ per week, and $942.92kWh$ per month. According to 2019 Green Cup Challenge data, Middle Dorm 
+alone used 4640kWh in the first week of Green Cup Challenge, which means a single turbine only generate 5.6\% of the electricity consumption of the Middle Dorm. The entire campus used 72,091kWh during the first week of 
+Green Cup Challenge, meaning that around 280 wind turbines are needed to generate the electricity needed by the entire school. Therefore, a small scale wind farm at Kent will not contribute to the relieve of electrical 
+consumption of the school. 
+\\\indent Looking at the economic feasibility of the construction of a wind farm, with CT commercial electricity rate being $14.65\cent/kWh$ we can estimate that a single wind turbine is going to save Kent School $\mathdollar5.39$ 
+per day, $\mathdollar38.02$ per week, and $\mathdollar138.11$ per month. The general installation cost of a single 10kW wind turbine is around \textdollar50,000 with the turbine itself 
+costing around \textdollar40,000 if ignore the transportation cost of the wind turbine. This means that a 10kW wind turbine installed around Boardwalk is going to pay itself back in 25 years. Since the general life span of a wind turbine is around 20 to 25 years, 
+this will be an even investment for the school with no financial gain or loss.
+\\\indent As the result of the analysis of the power generation data, it is obvious that constructing a wind farm around Boardwalk is economically viable with no obvious gain and loss, but would not contribute to reducing the school's 
+demand on electricity produced by traditional fossil fuel sources. Also, as demonstrated in \textit{Figure \ref{fig:locationpick}}, we can see that students actually do not think that constructing a wind farm near Boardwalk is going to 
+have negative influence on the aesthetic beauty of the campus. The only thing that need to be considered is the content described in Location Determination Factor 3 described in \textit{\ref{sec:methods:locdeterprocess}} that the construction 
+and operation of wind turbines near an area of frequency student activities such as Boardwalk might result in disturbances to normal school operations during the construction phase and noise pollution after wind turbines are put into 
+operation. But in general, the construction of a small-scale wind farm near Boardwalk is feasible if we can find a clear field on the ground with ample area for the construction.
 
 
 \subsection{Error Analysis}
@@ -579,7 +609,7 @@ the feasibility of the location. Most of the experimental errors are introduced 
 
 \subsubsection{Unrealistic height of anemometer}
 \label{sec:analysis:erroranalysis:unrealisticheight}
-For the HoldPeak 856B anemometer, we installed the anemometer on top of a normal commercial camera tripod. Therefore, the maxium height of measurement for the anemometer was 2m above ground level. 
+For the HoldPeak 856B anemometer, we installed the anemometer on top of a normal commercial camera tripod. Therefore, the maximum height of measurement for the anemometer was 2m above ground level. 
 A usual commercial wind turbine is not located at this height, apparently, since at this level, the movement of wind is going to be obstructed by surrounding physical objects, such as buildings 
 (Hoerle Hall and Hockey Rink) and natural objects(Trees), and the wind speed pattern is going to be erratic. As the result, the wind speed measured by the HoldPeak instrument at South Field and 
 Club Field do not accurately reflect the actual wind speed and wind speed pattern a commercial wind turbine installed at those locations will experience. 
@@ -597,7 +627,6 @@ From \textit{Figure \ref{fig:holdpeak}} we can see that the fan-like design of t
 it will register on HoldPeak as decreased wind speed rather than change of direction, contributing bias in the final wind speed data.
 \\\indent This is not a problem with the AQM65 on top of Dickinson Auditorium because it measures and records wind speed with three cup-shaped structures, making it responsive to winds coming from all directions.
 
-\clearpage
 \begin{figure}[!h]
     \includegraphics[
         width=0.5\textwidth,
