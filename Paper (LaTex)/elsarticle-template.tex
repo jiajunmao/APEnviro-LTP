@@ -207,7 +207,7 @@ After sending out requests to 60 students on campus with the question \textit{Wh
     \item {South Field}
     \item {Boardwalk/Main}   
 \end{enumerate}
-we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey is demonstrated in \textit{Figure 1-1} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
+we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey is demonstrated in \textit{Figure \ref{fig:locationpick}} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2. 
 %TODO: Change the question in the methods section to make sure the paper is not self-conflicting
 
 \clearpage
@@ -241,7 +241,7 @@ and the following choices,
     \item Boardwalk/Main
 \end{enumerate}
 
-we received 12 responses from those 60 questionnaires, a resposne rate of 20\%. The result of the survey is demonstrated in \textit{Figure1-2} with 58\% of responses saying yes 
+we received 12 responses from those 60 questionnaires, a resposne rate of 20\%. The result of the survey is demonstrated in \textit{Figure \ref{graph:locationbeauty}} with 58\% of responses saying yes 
 for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of responses saying yes to Boardwalk.\\
 
 \begin{figure}[!h]
@@ -277,13 +277,13 @@ for Club Field, 8.3\% of responses saying yes to South Field, and 33.4\% of resp
 \clearpage
 \subsection{Location Wind Speed Result}
 \label{sec:results:locwindspeedresults}
-For reasons mentioned Section X.X of the error analysis, only wind speed data from the anemometer on top of Dickinson Auditorium is preserved and recorded. We have manged to obtain 
+For reasons mentioned \textit{\ref{sec:analysis:erroranalysis:datadestruction}}  of the error analysis, only wind speed data from the anemometer on top of Dickinson Auditorium is preserved and recorded. We have manged to obtain 
 the wind data for a single day (5/22/2019), an entire week (5/15-5/22/2019) and an entire month (4/22-5/22/2019). For each individual time period we plotted the detail wind speed data 
 averaged for relatively small time frame to accurately reflect the wind speed during that period of time while preserving the visibility in the graphed plots. Then for each time frame 
 we plotted an extra graph using a moving average of a longer period of time, which shows the general trend of the wind speed.
-\\\indent It can be seen from \textit{Figure 2-1-2}(single day) that for a single day during spring time, highest wind speed occurs during midday with wind speed reaching as high as 2m/s while the wind 
-speed during morning and evening are only around 0.5m/s. It can also be seen from \textit{Figure 2-2-2}(entire week) that the general trend of wind speed during a week corresponds to daily trend without 
-a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind speed is generally higher at the end of a month.
+\\\indent It can be seen from \textit{Figure \ref{wind:oneday:onehour}}(single day) that for a single day during spring time, highest wind speed occurs during midday with wind speed reaching as high as 2m/s while the wind 
+speed during morning and evening are only around 0.5m/s. It can also be seen from \textit{Figure \ref{wind:oneweek:fourhour}}(entire week) that the general trend of wind speed during a week corresponds to daily trend without 
+a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth:oneday}} that wind speed is generally higher at the end of a month.
 
 %TODO: might change after more data is added to the plot
 
@@ -527,6 +527,50 @@ a clear weekly trend. At last, we can see from \textit{Figure 2-3-2} that wind s
 \section{Analysis}
 \label{sec:analysis}
 
+\subsection{Location Determination Analysis}
+
+Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section \ref{sec:methods:locdeterprocess}}, Club Field, South Field and 
+Boardwalk all satisfy the the Location Determination Factor 1 (powerful and consitent wind) from the survey result and thus qualify for being considered for the Location Determination Factor 2 (feasible location).  %/TODO: Conduct statisitcal test
+\\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
+be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the Location Determination Factor 2 by not only having 
+a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
+impossible location to construct a wind farm due to unclear ground level, thus removed from consideration. As the result, only South Field and Club Field qualify for being 
+considered for Location Determination Factor 3 (minimal influence on school operations).
+\\\indent South Field and Club Field are fields activitely used for majority of outdoor atheletic trainings and events during the fall and spring terms of Kent School. Hence, 
+having a wind farm at those two locations might have impacts on school operations during the construction phase, operation phase, and decommission phase. During the construction 
+phase, areas on both of the fields will be appropriated for the construction of roads for transportation of building materials and passage of construction vehicles, as well as
+temporary placement of building materials. Therefore, no atheletic events and trainings can be carried out during the construction phase. After the construction ended and the wind 
+turbines are in operation, both fields still need to go through recovery period for all the grass that is necessary for atheletic events and trainings to grow back. Therefore, we 
+can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
+to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
+to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
+
+Because 91.7\% of the people responded think that constructing a wind farm at South Field would not disrupt the landscape of Kent School, South Field satifies Location Determination Factor 4 
+and qualify to become one of the potential site for the construction of the wind farm. Surprisingly, though being an open field similar to South Field, 58\% of people responded think that constructing
+a wind farm at Club Field would actually disrupt the beautiful landscape of Kent School. This might be caused by Club Field's close proximity to the main campus so that students will be able to 
+have the wind farm in visual at a higher frequency whereas students rarely visit South Field other than atheletic trainings and events and South Field is relatively far away from the main campus. 
+However, since 58\% is not statistically significantly higher than 50\%, we cannot arrive at the conclusion that majority of the Kent Students will think that constructing a wind farm at Club Field 
+will have negative impacts on the Kent landscape. As the result, Club Field will also be considered as a qualifying location for building a wind farm.
+\\\indent To our surprise, only 33.4\% of people responded think that having a wind farm at Boardwalk is going to have negative impacts on Kent scenery considering the location of the Boardwalk - at the center of 
+the main campus and in close proximity to areas of frequency academic activities and student life (dormitories, dining hall, chapel, etc.). Therefore, because of the reason mentioned in \textit{Section \ref{sec:analysis:erroranalysis:datadestruction}} of 
+error analysis, we kept Boardwalk/main for the feasibility analysis despite the fact that it does not satisfy Location Determination Factor 2, which is a strict requirement.
+\\\indent To conclude, Club Field, South Field and Boardwalk/Main all will be considered as qualifying locations for the construction of a wind farm for Kent School and all threee locations will be analyzed 
+for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweight the environmental cost and disturbances to the school operation.
+%TODO: a statistical test
+
+
+\subsection{Feasbility Analysis}
+
+Because of the reason mentioned \textit{Section \ref{sec:analysis:erroranalysis:datadestruction}}, we only have the data available from the AQM65 on top of Dickinson Auditorium and a selection of its data is plotted 
+from \textit{Figure \ref{wind:oneday:tenminutes}} to \textit{\ref{wind:onemonth:oneday}}. Since we lack of data regarding wind speed at South Field and Club Field, we cannot determine the feasibility of constructing a 
+wind farm at that location. Therefore, we are only able to determine whether it is feasible to construct a wind farm somewhere near Boardwalk with the data obtained. A wind turbine's power output can 
+be calculated with the following equation:
+
+\begin{equation}
+    P=1/2*k*C_{p}*\rho*A*V^3
+\end{equation}
+
+
 \subsection{Error Analysis}
 \label{sec:analysis:erroranalysis}
 
@@ -534,6 +578,7 @@ Though we tried for our best to consider potential locations around the campus t
 the feasibility of the location. Most of the experimental errors are introduced during the feasibility determination process when the wind speed at South Field, Club Field and Boardwalk are measured.
 
 \subsubsection{Unrealistic height of anemometer}
+\label{sec:analysis:erroranalysis:unrealisticheight}
 For the HoldPeak 856B anemometer, we installed the anemometer on top of a normal commercial camera tripod. Therefore, the maxium height of measurement for the anemometer was 2m above ground level. 
 A usual commercial wind turbine is not located at this height, apparently, since at this level, the movement of wind is going to be obstructed by surrounding physical objects, such as buildings 
 (Hoerle Hall and Hockey Rink) and natural objects(Trees), and the wind speed pattern is going to be erratic. As the result, the wind speed measured by the HoldPeak instrument at South Field and 
@@ -545,9 +590,10 @@ AQM65 also does not reflect the wind speed and wind speed pattern at the height 
 the wind speed data obtained from AQM65 and HoldPeak 865B will be used as indicators for the wind speed at higher altitude of that location.
 
 \subsubsection{Single direction measurement}
+\label{sec:analysis:erroranalysis:singledirection}
 The fact that wind speed can only be measured from a constant angle by the measuring fan is a problem for the HoldPeak instrument. 
 Modern wind turbines all possess the ability to yaw, pitch and rotate horizontally to match up to the direction of wind to obtain greatest wind speed thus optimal amount of power generation. 
-From \textit{figure \ref{fig:holdpeak}} we can see that the fan-like design of the HoldPeak 865B make it only capable of measuring the speed of wind coming from one direction. When the wind changes direction, 
+From \textit{Figure \ref{fig:holdpeak}} we can see that the fan-like design of the HoldPeak 865B make it only capable of measuring the speed of wind coming from one direction. When the wind changes direction, 
 it will register on HoldPeak as decreased wind speed rather than change of direction, contributing bias in the final wind speed data.
 \\\indent This is not a problem with the AQM65 on top of Dickinson Auditorium because it measures and records wind speed with three cup-shaped structures, making it responsive to winds coming from all directions.
 
@@ -561,48 +607,14 @@ it will register on HoldPeak as decreased wind speed rather than change of direc
     \label{fig:holdpeak}
 \end{figure}
 
-\subsection{Data Destruction}
+\subsubsection{Data Destruction}
+\label{sec:analysis:erroranalysis:datadestruction}
 The worst error introduced into this study is the loss of the wind speed data of Club Field and South Field from the HolePeak. Since a Rasberry Pi was used to record the data coming from the HoldPeak 
 instrument sine HoldPeak officially only provide a windows-based application and it is unrealistic to use a laptop computer to collect data because its battery will not last for 24 hours, we determined 
 that we are not going to measure the wind speed data during rainy days because Rasberry Pi is not water-proof. However, failure to check the newest weather report on 5/21/2019 resulted in Rasberry Pi's 
 exposure in rain for an extended period of time - about 1 hour and caused the main circuit board of the Rasberry Pi to short out, burning out the Micro-SD card that was holding the wind speed data. Because 
 of the ill-preparedeness that CL and Aaron had toward accidents like this, we did not previously backup the data on Rasberry Pi onto another computer. Therefore, every recorded wind speed data for Club Field 
 and South Field were destroyed and lost, leaving us with only the data from the AQM65 on top of Dickinson Auditorium.
-
-\subsection{Feasbility Analysis}
-
-
-Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processses described in \textit{Section 2.2}, Club Field, South Field and Boardwalk all satisfy the the location determination factors 1 (powerful and consitent wind) 
-from the survey result and thus qualify for being considered for the location determination factor 2 (feasible location).  %/TODO: Conduct statisitcal test
-\\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity, therefore they have a clear ground level that would 
-be suitable for the construction of wind farm. We can also see that both South Field and Club Field satify the entirty of the location determination factor 2 by not only having 
-a clear ground level but a clear air space above. On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an 
-impossible location to construct a wind farm due to unclear ground level, thus removed from consideration. As the result, only South Field and Club Field qualify for being 
-considered for location determination factor 3 (minimal influence on school operations).
-\\\indent South Field and Club Field are fields activitely used for majority of outdoor atheletic trainings and events during the fall and spring terms of Kent School. Hence, 
-having a wind farm at those two locations might have impacts on school operations during the construction phase, operation phase, and decommission phase. During the construction 
-phase, areas on both of the fields will be appropriated for the construction of roads for transportation of building materials and passage of construction vehicles, as well as
-temporary placement of building materials. Therefore, no atheletic events and trainings can be carried out during the construction phase. After the construction ended and the wind 
-turbines are in operation, both fields still need to go through recovery period for all the grass that is necessary for atheletic events and trainings to grow back. Therefore, we 
-can predict that atheletic programs of Kent School are going to be severely disrupted if the construction happens during an academic school year. A solution does exist for the school 
-to construct the wind farm during summer session, which gives Kent School 3 months to finish construction. However, if the construction does not finish in that time frame, disturbances 
-to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
-
-
-
-Because 91.7\% of the people responded think that constructing a wind farm at South Field would not disrupt the landscape of Kent School, South Field satifies location determination factor 4 
-and qualify to become one of the potential site for the construction of the wind farm. Surprisingly, though being an open field similar to South Field, 58\% of people responded think that constructing
-a wind farm at Club Field would actually disrupt the beautiful landscape of Kent School. This might be caused by Club Field's close proximity to the main campus so that students will be able to 
-have the wind farm in visual at a higher frequency whereas students rarely visit South Field other than atheletic trainings and events and South Field is relatively far away from the main campus. 
-However, since 58\% is not statistically significantly higher than 50\%, we cannot arrive at the conclusion that majority of the Kent Students will think that constructing a wind farm at Club Field 
-will have negative impacts on the Kent landscape. As the result, Club Field will also be considered as a qualifying location for building a wind farm.
-\\\indent To our surprise, only 33.4\% of people responded think that having a wind farm at Boardwalk is going to have negative impacts on Kent scenery considering the location of the Boardwalk - at the center of 
-the main campus and in close proximity to areas of frequency academic activities and student life (dormitories, dining hall, chapel, etc.). Therefore, because of the reason mentioned in Section X.X of 
-error analysis, we kept Boardwalk/main for the feasibility analysis despite the fact that it does not satisfy location determination factor 2, which is a strict requirement.
-\\\indent To conclude, Club Field, South Field and Boardwalk/Main all will be considered as qualifying locations for the construction of a wind farm for Kent School and all threee locations will be analyzed 
-for their wind speed to determine whether the economic and environmental benefits of building a wind farm at that location will outweight the environmental cost and disturbances to the school operation.
-%TODO: a statistical test
-
 
 
 \clearpage
