@@ -545,20 +545,29 @@ AQM65 also does not reflect the wind speed and wind speed pattern at the height 
 the wind speed data obtained from AQM65 and HoldPeak 865B will be used as indicators for the wind speed at higher altitude of that location.
 
 \subsubsection{Single direction measurement}
-Though not a problem for the AQM65 on top of Dickinson Auditorium, the fact that wind speed can only be measured from a constant angle by the measuring fan is a problem for the HoldPeak instrument. 
-Modern wind turbines all possess the ability to yaw, pitch and rotate horizontally to match up to the direction of wind to obtain greatest wind speed thus optimal amount of power generation. The fan-like 
-design of the HoldPeak 865B make it only capable of measuring the speed of wind coming from one direction. When the wind changes direction, it will register on HoldPeak as decreased wind speed rather 
-than change of direction. Contributing bias in the final wind speed data. 
+The fact that wind speed can only be measured from a constant angle by the measuring fan is a problem for the HoldPeak instrument. 
+Modern wind turbines all possess the ability to yaw, pitch and rotate horizontally to match up to the direction of wind to obtain greatest wind speed thus optimal amount of power generation. 
+From \textit{figure \ref{fig:holdpeak}} we can see that the fan-like design of the HoldPeak 865B make it only capable of measuring the speed of wind coming from one direction. When the wind changes direction, 
+it will register on HoldPeak as decreased wind speed rather than change of direction, contributing bias in the final wind speed data.
+\\\indent This is not a problem with the AQM65 on top of Dickinson Auditorium because it measures and records wind speed with three cup-shaped structures, making it responsive to winds coming from all directions.
+
+\clearpage
 \begin{figure}[!h]
     \includegraphics[
-        width=0.5\textwidth
-        height=0.25\textwidth]{../Data/holdpeak.jpg}
+        width=0.5\textwidth,
+        height=0.45\textwidth]
+    {../Data/holdpeak.jpg}
     \caption{Picture of HoldPeak 822B}
     \label{fig:holdpeak}
 \end{figure}
 
 \subsection{Data Destruction}
-
+The worst error introduced into this study is the loss of the wind speed data of Club Field and South Field from the HolePeak. Since a Rasberry Pi was used to record the data coming from the HoldPeak 
+instrument sine HoldPeak officially only provide a windows-based application and it is unrealistic to use a laptop computer to collect data because its battery will not last for 24 hours, we determined 
+that we are not going to measure the wind speed data during rainy days because Rasberry Pi is not water-proof. However, failure to check the newest weather report on 5/21/2019 resulted in Rasberry Pi's 
+exposure in rain for an extended period of time - about 1 hour and caused the main circuit board of the Rasberry Pi to short out, burning out the Micro-SD card that was holding the wind speed data. Because 
+of the ill-preparedeness that CL and Aaron had toward accidents like this, we did not previously backup the data on Rasberry Pi onto another computer. Therefore, every recorded wind speed data for Club Field 
+and South Field were destroyed and lost, leaving us with only the data from the AQM65 on top of Dickinson Auditorium.
 
 \subsection{Feasbility Analysis}
 
