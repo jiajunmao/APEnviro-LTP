@@ -2,6 +2,7 @@
 
 \usepackage{lineno,hyperref}
 \usepackage{wasysym}
+\usepackage{verbatim}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot, statistics}
 \usepackage{titlesec}
@@ -12,6 +13,7 @@
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \usepackage[nottoc,notlof,notlot]{tocbibind} 
 \renewcommand\bibname{Literature Cited}
+\usepackage{enumitem}
 
 \modulolinenumbers[5]
 
@@ -34,15 +36,35 @@
     Boardwalk & 4 & 8\\
 }\locationbeauty
 
-\pgfplotstableread[col sep=comma]{../Data/1day/windata10m.csv}\windonedaytenminutes
-\pgfplotstableread[col sep=comma]{../Data/1day/windata1hr.csv}\windonedayonehour
-
-\pgfplotstableread[col sep=comma]{../Data/1week/windata30m.csv}\windoneweekthirtyminutes
-\pgfplotstableread[col sep=comma]{../Data/1week/windata4hr.csv}\windoneweekfourhour
-
-\pgfplotstableread[col sep=comma]{../Data/1month/windata2h.csv}\windonemonthtwohour
-\pgfplotstableread[col sep=comma]{../Data/1month/windata12h.csv}\windonemonthtwelvehour
-\pgfplotstableread[col sep=comma]{../Data/1month/windata1d.csv}\windonemonthoneday
+%%%%%%% One Day 10 minutes%%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0522-10m.csv}\windzerofivetwotwotenminutes
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0422-10m.csv}\windzerofourtwotwotenminutes
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0322-10m.csv}\windzerothreetwotwotenminutes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% One Day 1 Hour%%%%%%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0522-1hr.csv}\windzerofivetwotwoonehour
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0422-1hr.csv}\windzerofourtwotwoonehour
+\pgfplotstableread[col sep=comma]{../Data/1day/windata-0322-1hr.csv}\windzerothreetwotwoonehour
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% One Week 30 minutes%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-05150522-30m.csv}\windzerofiveonefivethirtyminutes
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-04150422-30m.csv}\windzerofouronefivethirtyminutes
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-03150322-30m.csv}\windzerothreeonefivethirtyminutes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% One Week 4 Hour%%%%%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-05150522-4hr.csv}\windzerofiveonefivefourhour
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-04150422-4hr.csv}\windzerofouronefivefourhour
+\pgfplotstableread[col sep=comma]{../Data/1week/windata-03150322-4hr.csv}\windzerothreeonefivefourhour
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% One Month 2 Hour%%%%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-04220522-2hr.csv}\windzerofourtwotwozerofivetwotwortwohour
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-03220422-2hr.csv}\windzerothreetwotwozerofourtwotwortwohour
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-02220322-2hr.csv}\windzerotwotwotwozerothreetwotwortwohour
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% One Month 1 Day%%%%%%%%%%%
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-04220522-1d.csv}\windzerofourtwotwozerofivetwotwooneday
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-03220422-1d.csv}\windzerothreetwotwozerofourtwotwooneday
+\pgfplotstableread[col sep=comma]{../Data/1month/windata-02220322-1d.csv}\windzerotwotwotwozerothreetwotwooneday
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -96,7 +118,7 @@ environmentally-friendly energy source is in need. It is evident through multipl
 of subsidizing, if not replacing, the role of power generation by those traditional energy sources. In light of the development of 
 wind power worldwide, it is crucial for Kent School also to consider using wind power to fulfill parts of the electricity consumption 
 on campus and hopefully reduce campus' environmental footprint. This study specifically focuses on the feasibility of a small-scale 
-wind farm on Kent School's campus through economic, environmental, and aesthetic perspectives.
+wind farm on Kent School's campus through economic, environmental, and aesthetic perspectives. \\
 \end{abstract}
 
 \begin{keyword}
@@ -161,25 +183,25 @@ for a single student become more financially self-sufficient, in turn providing 
 \section{Methods}
 \label{sec:methods}
 
-\subsection{Location Determination Factors}
+\subsection{Location Determination Factors (LDF)}
 When determining the location of the possible wind farm, the location must satisfy the requirements including but not limited to the 
-listed below. When considering a location, requirement 1 and 2 are strict requirements, meaning that if these two requirements are not 
-fulfilled, a location should not be considered even if they satisfy requirement 3 and 4. Requirement 3 and 4 in turn, are loose requirements 
+listed below. When considering a location, \ref{LDF1} and \ref{LDF2} are strict requirements, meaning that if these two requirements are not 
+fulfilled, a location should not be considered even if they satisfy \ref{LDF3} and \ref{LDF4}. Requirement 3 and 4 in turn, are loose requirements 
 that do not necessarily have to be fulfilled if the economic and environmental benefit of constructing a wind farm outweigh the negative 
 influence. However, if there is a statistically significant portion of student body voicing against the construction of the wind farm for 
-a reason mentioned in requirement 3 and 4, these two requirements will be weighted more heavily into consideration of the location of the wind farm.
+a reason mentioned in \ref{LDF3} and \ref{LDF4}, these two requirements will be weighted more heavily into consideration of the location of the wind farm.
 
-\begin{enumerate} %TODO: FIX WHAT'S GOING ON FUCKER
-    \item \emph{Powerful and consistent wind.} 60 Kent stuents will be randomly selected to answer the question of \textit{Where on campus do you 
+\begin{enumerate}[label=\textbf{LDF \arabic*}]
+    \item \label{LDF1}\textit{\textbf{Powerful and consistent wind.}} 60 Kent stuents will be randomly selected to answer the question of \textit{Where on campus do you 
     think the wind is strongest?}. From the respond received, the location that satisfy the requirement of powerful and consistent wind will be the 
     one with the highest number of votes as well as those ones that are significantly higher than those of low votes.
-    \item \emph{Feasible location.} Whether that location has enough space on the ground and in the air to support the construction of a wind 
+    \item \label{LDF2}\textit{\textbf{Feasible location.}} Whether that location has enough space on the ground and in the air to support the construction of a wind 
     farm. This factor is determined by the proximity to another physical object on the ground level or in the air, such as dormitories, 
     academic/religious buildings, mountains, etc.
-    \item \emph{Minimal influence on school operations.} Whether the construction and prescence of a wind farm at that location will cause 
+    \item \label{LDF3}\textit{\textbf{Minimal influence on school operations.}} Whether the construction and prescence of a wind farm at that location will cause 
     disturbance or negative influence on normal daily school operations. For example, the noise generated by the wind turbine is factored 
     into considerations.
-    \item \emph{Minimal influence on aesthetic beauty.} Again, another group of randomly selected 60 students will be asked with the question 
+    \item \label{LDF4}\textit{\textbf{Minimal influence on aesthetic beauty.}} Again, another group of randomly selected 60 students will be asked with the question 
     \textit{Do you think the construction of a wind farm at those cites will have negative impacts on the aesthetic beauty of the surrounding 
     area and the Kent campus?} Whether a location will have negative influence on aesthetic beauty of the valley land of Kent will be determined 
     by the proportion of students who responded yes (There is negative impact) - if more than 50\% of the students responded yes, the location will 
@@ -187,25 +209,33 @@ a reason mentioned in requirement 3 and 4, these two requirements will be weight
 \end{enumerate}
 
 \subsection{Location Determination Process}
-\label{sec:methods:locdeterprocess} %TODO: FIX WHAT'S GOING ON FUCKER
+\label{sec:methods:locdeterprocess} 
 In order to obtain a general location on campus where the wind is consistent and powerful, a study will be done with students population on 
-campus. By assigning each of CL and Jiajun's 54 friends a number and by using a random number generator, we were able to select 30 students 
-to respond to the question of \textit{"Where on campus do you think the wind is strongest? And another location where the wind is the second strong?"}. 
-From all the responses received, two locations with the highest vote and consider them for the second requirement of location feasibility. 
-Taking the second requirement into consideration - location feasibility, both sites' proximity to another physical object will be analyzed 
-and whether the two sites from the requirement above satisfy the criteria of having a clear ground level and aerial zone for the construction 
-of a possible wind farm will be concluded. If any location does not satisfy the criteria for this requirement, it will be eliminated from 
-consideration. Then, from the remaining locations, their potential influence on the school's regular operation will be analyzed, including 
-but not limited to academic activities, athletic activities, and recreational activities. The adverse effects of the wind farm will be analyzed 
-and considered such as the noise generated and the space required on the ground level. At last, the remaining sites might cause an influence 
-on the aesthetic beauty of the Housatonic Valley. A study identical to the one described in requirement one is conducted again with the question 
-\textit{"Do you think the construction of a wind farm at site A and/or B will have a negative impact on the aesthetic beauty of the surrounding area and the Kent campus?"} 
-From the answers received we will analyze the majority side and take that into consideration. 
+campus. By assigning each of the Kent Students a number and by using a random number generator, we were able to select 60 students 
+to respond to the question of \textit{"Where on campus do you think the wind is strongest"} and to make the survey simpler, we provided the 
+surveyed students with the option of
+\begin{enumerate}
+    \item {Club Field}
+    \item {Headmaster's Field}
+    \item {South Field}
+    \item {Boardwalk}
+\end{enumerate} 
+From all the responses received, the locations with the highest vote as well as others that have significantly higher votes than the ones 
+with the low vote will be selected and be considered for \ref{LDF2}. Considering \ref{LDF2} - 
+location feasibility, both sites' proximity to another physical object will be estimated and whether the sites that passed the \ref{LDF1} 
+satisfy the criteria of having a clear ground level and aerial zone for the construction of a possible wind farm will 
+be concluded. If any location does not satisfy the criteria for \ref{LDF2}, it will be eliminated from consideration. Then, 
+from the remaining locations, their potential influence during construction and operation on the school's regular operations, including 
+but not limited to academic activities, athletic activities, and recreational activities will be analyzed. The adverse effects of the wind 
+farm will be analyzed and considered such as the noise generated, space required on the ground level, and the time required to build the wind 
+farm. At last,to analyze whether the construction of a wind farm at the remaining sites from \ref{LDF3}, the processed 
+described in the \ref{LDF4} is conducted. If more than 50\% of the student responded thinking that an adverse effect 
+on the aesthetic beauty of Kent School will be generated by the construction of the wind farm, that location will be reconsidered for its feasibility.
 
 \subsection{Feasibility Determination Process}
 \label{sec:methods:feasdeterprocess}
-After the location is determined by the process described in section 2.2, they will be analyzed for the feasibility of actually constructing 
-a wind farm. Relevant data, such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 856A will 
+After the location is determined by the process described in \textit{Section \ref{sec:methods:locdeterprocess}}, they will be analyzed for the feasibility of actually constructing 
+a wind farm. Relevant data, such as flow volume and wind speed will be collected. To collect such data, HoldPeak's wind anemometer 826B will 
 be used. The device will be set up in the chosen location, and the fan that will be measuring the wind speed will be set up on top of a tripod 
 2m above ground level. After a continuous 24 hours of data collection, the data from the wind anemometer is then transferred to the computer, 
 and a graph of wind speed/flow volume against time will be plotted.
@@ -231,8 +261,6 @@ After sending out requests to 60 students on campus with the question \textit{Wh
 we received 17 response from those 60 questionnaires sent, a response rate of 28.3\%. The result of the survey is demonstrated in 
 \textit{Figure \ref{fig:locationpick}} with Club Field, South Field, and Boardwalk each receiving 5 votes and Headmaster's Field Receiving 2.
 
-\clearpage
-
 \begin{figure}
     \caption{Location of Strongest Wind at Kent School}
     \begin{tikzpicture}
@@ -253,6 +281,8 @@ we received 17 response from those 60 questionnaires sent, a response rate of 28
     \end{tikzpicture}
     \label{fig:locationpick}
 \end{figure}
+
+\clearpage
 
 From the 60 surveys we sent out to random Kent students with the question \textit{Will Installing Wind Turbines at Following Locations Disrupt the Beautiful Kent Scneary} 
 and the following choices,
@@ -307,13 +337,12 @@ the general trend of the wind speed.
 \\\indent It can be seen from \textit{Figure \ref{wind:oneday:onehour}}(single day) that for a single day during springtime, highest wind 
 speed occurs during the midday with wind speed reaching as high as 2m/s while the wind speed during morning and evening are only around 0.5m/s. 
 It can also be seen from \textit{Figure \ref{wind:oneweek:fourhour}}(entire week) that the general trend of wind speed during a week corresponds 
-to the daily trend without a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth:oneday}} that wind speed is generally 
+to the daily trend without a clear weekly trend. At last, we can see from \textit{Figure \ref{wind:onemonth:oneday}}(entire month) that wind speed is generally 
 higher at the end of a month.
-
-%TODO: might change after more data is added to the plot
-
-\vspace{100pt}
-\textit{\textbf{Graphs are on next page for better formatting}}
+\\\indent Corresponding to the pattern of the wind speed described in \textit{Figure \ref{wind:oneday:onehour}}, \textit{Figure \ref{wind:oneweek:fourhour}}, 
+and \textit{Figure \ref{wind:onemonth:oneday}}, the amount of power generated by the potential wind turbine is also the highest at at midday 
+according to \textit{Figure \ref{power:oneday:tenminutes}}. For an extended period of time, the amount of power generated by the potential 
+wind turbine is highest as the end of the week and the end of the month demonstrated in \textit{Figure \ref{power:oneweek:thirtyminutes}} and \textit{Figure \ref{power:onemonth:twohour}}.
 
 \clearpage
 
@@ -331,13 +360,18 @@ higher at the end of a month.
             date coordinates in=x, 
             table/col sep=comma, 
             date ZERO=2019-05-22, 
-            xticklabel=\month.\day. \hour:\minute, 
+            xticklabel=\hour:\minute, 
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             title style={anchor=north,yshift=20}
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedaytenminutes};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofivetwotwotenminutes};
+            \addlegendentry{May 22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofourtwotwotenminutes};
+            \addlegendentry{April 22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreetwotwotenminutes};
+            \addlegendentry{March 22}
         \end{axis}
     \end{tikzpicture}
     \label{wind:oneday:tenminutes}
@@ -355,16 +389,22 @@ higher at the end of a month.
             date coordinates in=x, 
             table/col sep=comma, 
             date ZERO=2019-05-22, 
-            xticklabel=\month.\day. \hour:\minute,
+            xticklabel=\hour:\minute,
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonedayonehour};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofivetwotwoonehour};
+            \addlegendentry{May 22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofourtwotwoonehour};
+            \addlegendentry{April 22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreetwotwoonehour};
+            \addlegendentry{March 22}
         \end{axis}
     \end{tikzpicture}
     \label{wind:oneday:onehour}
 \end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %One Week%
@@ -379,13 +419,18 @@ higher at the end of a month.
             ylabel=Wind Speed(m/s), 
             date coordinates in=x, 
             table/col sep=comma, 
-            date ZERO=2019-05-17, 
-            xticklabel=\month.\day. \hour:\minute, 
+            date ZERO=2019-05-17,
+            xticklabel=\day. \hour:\minute, 
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekthirtyminutes};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofiveonefivethirtyminutes};
+            \addlegendentry{May 15-22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofouronefivethirtyminutes};
+            \addlegendentry{April 15-22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreeonefivethirtyminutes};
+            \addlegendentry{March 15-22}
         \end{axis}
     \end{tikzpicture}
     \label{wind:oneweek:thirtyminutes}
@@ -403,12 +448,17 @@ higher at the end of a month.
             date coordinates in=x, 
             table/col sep=comma, 
             date ZERO=2019-05-17, 
-            xticklabel=\month.\day. \hour:\minute, 
+            xticklabel=\day. \hour:\minute, 
             width=\textwidth,
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windoneweekfourhour};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofiveonefivefourhour};
+            \addlegendentry{May 15-22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofouronefivefourhour};
+            \addlegendentry{April 15-22}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreeonefivefourhour};
+            \addlegendentry{March 15-22}
         \end{axis}
     \end{tikzpicture}
     \label{wind:oneweek:fourhour}
@@ -433,7 +483,12 @@ higher at the end of a month.
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthtwohour};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofourtwotwozerofivetwotwortwohour};
+            \addlegendentry{April-May}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreetwotwozerofourtwotwortwohour};
+            \addlegendentry{March-April}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerotwotwotwozerothreetwotwortwohour};
+            \addlegendentry{Feb.-March}
         \end{axis}
     \end{tikzpicture}
     \label{wind:onemonth:twohour}
@@ -456,7 +511,12 @@ higher at the end of a month.
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windonemonthoneday};
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerofourtwotwozerofivetwotwooneday};
+            \addlegendentry{April-May}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerothreetwotwozerofourtwotwooneday};
+            \addlegendentry{March-April}
+            \addplot+[no markers] table[x=Time,y=WS (m/s)] {\windzerotwotwotwozerothreetwotwooneday};
+            \addlegendentry{Feb.-March}
         \end{axis}
     \end{tikzpicture}
     \label{wind:onemonth:oneday}
@@ -489,7 +549,7 @@ higher at the end of a month.
             xticklabel style={rotate=90, anchor=near xticklabel},
             title style={anchor=north,yshift=20}
             ]
-            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonedaytenminutes};
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windzerofivetwotwotenminutes};
         \end{axis}
     \end{tikzpicture}
     \label{power:oneday:tenminutes}
@@ -514,7 +574,7 @@ higher at the end of a month.
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windoneweekthirtyminutes};
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windzerofiveonefivethirtyminutes};
         \end{axis}
     \end{tikzpicture}
     \label{power:oneweek:thirtyminutes}
@@ -539,7 +599,7 @@ higher at the end of a month.
             height=0.54\textwidth,
             xticklabel style={rotate=90, anchor=near xticklabel},
             ]
-            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windonemonthtwohour};
+            \addplot+[no markers] table[x=Time,y=Power (kw)] {\windzerofourtwotwozerofivetwotwortwohour};
         \end{axis}
     \end{tikzpicture}
     \label{power:onemonth:twohour}
@@ -547,22 +607,20 @@ higher at the end of a month.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \section{Analysis}
 \label{sec:analysis}
 
 \subsection{Location Determination Analysis}
 
 Combining the result shown in \textit{Figure \ref{fig:locationpick}} the processes described in \textit{Section \ref{sec:methods:locdeterprocess}}, 
-Club Field, South Field and Boardwalk all satisfies the Location Determination Factor 1 (powerful and consistent wind) from the survey 
-result and thus qualify for being considered for the Location Determination Factor 2 (feasible location).  %/TODO: Conduct statistical test
+Club Field, South Field and Boardwalk all satisfies the \ref{LDF1} (powerful and consistent wind) from the survey 
+result and thus qualify for being considered for the \ref{LDF2} (feasible location).  %/TODO: Conduct statistical test
 \\\indent Both South Field and Club Field do not have any buildings or natural landscape such as Mount Algos in proximity. Therefore 
 they have a clear ground level that would be suitable for the construction of wind farm. We can also see that both South Field and Club 
-Field satisfy the entirety of the Location Determination Factor 2 by not only having a clear ground level but a clear air space above. 
+Field satisfy the entirety of the \ref{LDF2} by not only having a clear ground level but a clear air space above. 
 On the other hand, boardwalk/main is in close proximity to Dickinson Auditorium, Foley Hall and North Dorm, which makes it an impossible 
 location to construct a wind farm due to unclear ground level, thus removed from consideration. As a result, only South Field and Club 
-Field qualify for being considered for Location Determination Factor 3 (minimal influence on school operations).
+Field qualify for being considered for \ref{LDF3} (minimal influence on school operations).
 \\\indent South Field and Club Field are fields actively used for the majority of outdoor athletic training and events during the fall 
 and spring terms of Kent School. Hence, having a wind farm at those two locations might have impacts on school operations during the 
 construction phase, operation phase, and decommission phase. During the construction phase, areas on both of the fields will be appropriated 
@@ -575,7 +633,7 @@ session, which gives Kent School 3 months to finish construction. However, if th
 to school operations described above are still going to happen. %TODO: Cite construction period of a wind farm
 
 Because 91.7\% of the people responded think that constructing a wind farm at South Field would not disrupt the landscape of Kent School, 
-South Field satisfies Location Determination Factor 4 and qualify to become one of the potential sites for the construction of the wind 
+South Field satisfies \ref{LDF4} and qualify to become one of the potential sites for the construction of the wind 
 farm. Surprisingly, though being an open field similar to South Field, 58\% of people responded think that constructing a wind farm at Club 
 Field would disrupt the beautiful landscape of Kent School. This might be caused by Club Field's close proximity to the main campus so that 
 students will be able to have the wind farm in visual at a higher frequency whereas students rarely visit South Field other than athletic 
@@ -586,8 +644,7 @@ a wind farm.
 \\\indent To our surprise, only 33.4\% of people responded think that having a wind farm at Boardwalk is going to have a negative impacts on 
 Kent scenery considering the location of the Boardwalk - at the center of the main campus and in close proximity to areas of frequency 
 academic activities and student life (dormitories, dining hall, chapel, etc.). Therefore, because of the reason mentioned in \textit{Section \ref{sec:analysis:erroranalysis:datadestruction}} 
-of error analysis, we kept Boardwalk/main for the feasibility analysis despite the fact that it does not satisfy Location Determination 
-Factor 2, which is a strict requirement.
+of error analysis, we kept Boardwalk/main for the feasibility analysis despite the fact that it does not satisfy \ref{LDF2}, which is a strict requirement.
 \\\indent To conclude, Club Field, South Field, and Boardwalk/Main all will be considered as qualifying locations for the construction of 
 a wind farm for Kent School and all threee locations will be analyzed for their wind speed to determine whether the economic and environmental 
 benefits of building a wind farm at that location will outweigh the environmental cost and disturbances to the school operation.
@@ -638,8 +695,8 @@ that a 10kW wind turbine installed around Boardwalk is going to pay itself back 
 \\\indent As the result of the analysis of the power generation data, it is obvious that constructing a wind farm around Boardwalk is economically viable 
 with no obvious gain and loss, but would not contribute to reducing the school's demand on electricity produced by traditional fossil fuel sources. Also, 
 as demonstrated in \textit{Figure \ref{fig:locationpick}}, we can see that students actually do not think that constructing a wind farm near Boardwalk is 
-going to have negative influence on the aesthetic beauty of the campus. The only thing that needs to be considered is the content described in Location 
-Determination Factor 3 described in \textit{\ref{sec:methods:locdeterprocess}} that the construction and operation of wind turbines near an area of frequency 
+going to have negative influence on the aesthetic beauty of the campus. The only thing that needs to be considered is the content described in \ref{LDF3} 
+described in \textit{\ref{sec:methods:locdeterprocess}} that the construction and operation of wind turbines near an area of frequency 
 student activities such as Boardwalk might result in disturbances to normal school operations during the construction phase and noise pollution after wind 
 turbines are put into operation. But in general, the construction of a small-scale wind farm near Boardwalk is feasible if we can find a clear field on the 
 ground with ample area for the construction.
@@ -654,7 +711,7 @@ process when the wind speed at South Field, Club Field and Boardwalk are measure
 
 \subsubsection{Unrealistic height of anemometer}
 \label{sec:analysis:erroranalysis:unrealisticheight}
-For the HoldPeak 856B anemometer, we installed the anemometer on top of a standard commercial camera tripod. Therefore, the maximum height of measurement 
+For the HoldPeak 826B anemometer, we installed the anemometer on top of a standard commercial camera tripod. Therefore, the maximum height of measurement 
 for the anemometer was 2m above ground level. A usual commercial wind turbine is not located at this height, apparently, since at this level, the movement 
 of the wind is going to be obstructed by surrounding physical objects, such as buildings (Hoerle Hall and Hockey Rink) and natural objects(Trees), and the 
 wind speed pattern is going to be erratic. As a result, the wind speed measured by the HoldPeak instrument at South Field and Club Field does not accurately 
